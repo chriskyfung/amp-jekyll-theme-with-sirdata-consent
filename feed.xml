@@ -1,0 +1,2640 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/feed.xml" rel="self" type="application/atom+xml" /><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/" rel="alternate" type="text/html" /><updated>2024-12-06T06:15:15+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/feed.xml</id><title type="html">AMP Affiliately Jekyll Theme</title><subtitle>An AMP-ready Jekyll blog theme</subtitle><entry><title type="html">Using Front Matter CMS</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/front-matter-cms/" rel="alternate" type="text/html" title="Using Front Matter CMS" /><published>2024-11-25T05:11:00+00:00</published><updated>2024-11-27T13:11:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/vscode-front-matter</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/front-matter-cms/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#1-introduction" id="markdown-toc-1-introduction">1. Introduction</a></li>
+  <li><a href="#2-getting-started" id="markdown-toc-2-getting-started">2. Getting Started</a></li>
+  <li><a href="#3-breakdown-of-frontmatterjson" id="markdown-toc-3-breakdown-of-frontmatterjson">3. Breakdown of <code class="language-plaintext highlighter-rouge">frontmatter.json</code></a></li>
+  <li><a href="#4-breakdown-of-externaljs" id="markdown-toc-4-breakdown-of-externaljs">4. Breakdown of <code class="language-plaintext highlighter-rouge">external.js</code></a></li>
+  <li><a href="#5-content-management" id="markdown-toc-5-content-management">5. Content Management</a>    <ul>
+      <li><a href="#opening-the-front-mater-dashboard" id="markdown-toc-opening-the-front-mater-dashboard">Opening the Front Mater dashboard</a></li>
+      <li><a href="#opening-the-front-matter-editor-panel" id="markdown-toc-opening-the-front-matter-editor-panel">Opening the Front Matter Editor Panel</a></li>
+      <li><a href="#creating-content" id="markdown-toc-creating-content">Creating Content</a></li>
+      <li><a href="#editing-content" id="markdown-toc-editing-content">Editing Content</a></li>
+      <li><a href="#previewing-content" id="markdown-toc-previewing-content">Previewing Content</a></li>
+      <li><a href="#using-snippets" id="markdown-toc-using-snippets">Using Snippets</a>        <ul>
+          <li><a href="#amp-snippets" id="markdown-toc-amp-snippets">AMP Snippets</a></li>
+          <li><a href="#image-and-video-snippets" id="markdown-toc-image-and-video-snippets">Image and Video Snippets</a></li>
+          <li><a href="#content-management-snippets" id="markdown-toc-content-management-snippets">Content Management Snippets</a></li>
+          <li><a href="#kramdown-snippets" id="markdown-toc-kramdown-snippets">Kramdown Snippets</a></li>
+          <li><a href="#jekyll-snippets" id="markdown-toc-jekyll-snippets">Jekyll Snippets</a></li>
+        </ul>
+      </li>
+      <li><a href="#managing-taxonomies" id="markdown-toc-managing-taxonomies">Managing Taxonomies</a></li>
+    </ul>
+  </li>
+  <li><a href="#6-troubleshooting" id="markdown-toc-6-troubleshooting">6. Troubleshooting</a>    <ul>
+      <li><a href="#common-issues" id="markdown-toc-common-issues">Common Issues</a></li>
+      <li><a href="#support-resources" id="markdown-toc-support-resources">Support Resources</a></li>
+    </ul>
+  </li>
+  <li><a href="#7-conclusion" id="markdown-toc-7-conclusion">7. Conclusion</a></li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<h2 id="1-introduction">1. Introduction</h2>
+
+<p><strong><a href="https://frontmatter.codes/">Front Matter CMS</a></strong> is a dynamic and powerful Content Management System seamlessly integrated with <strong>Visual Studio Code</strong> (often abbreviated as <strong>VS Code</strong>). Specifically designed to work with static site generators like Jekyll, Front Matter CMS offers a user-friendly interface that simplifies the process of creating, editing, and managing posts, pages, and other content types. This makes it accessible even for users with limited technical expertise.</p>
+
+<p>By leveraging the combined capabilities of Front Matter CMS and VS Code with your Jekyll site, you can significantly streamline your content management processes, making it easier to maintain and update your site. Some of the key benefits of using Front Matter CMS include:</p>
+
+<ul>
+  <li><strong>User-Friendly Interface</strong>: Manage your content with ease using an intuitive and straightforward interface within VS Code.</li>
+  <li><strong>Real-Time Previews</strong>: See your changes as you make them in VS Code, ensuring your content looks perfect before publishing.</li>
+  <li><strong>Efficient Workflow</strong>: Simplify the process of creating and organizing content with built-in support for taxonomies, media management, and metadata.</li>
+</ul>
+
+<p>This documentation serves as a comprehensive guide on using Front Matter CMS in conjunction with VS Code to manage the content of your Jekyll site that uses our custom theme. Follow the steps below to set up and configure Front Matter CMS with your Jekyll site, and start managing your content more efficiently and effectively.</p>
+
+<h2 id="2-getting-started">2. Getting Started</h2>
+
+<p>This section will guide you through the initial setup of Front Matter CMS with your Jekyll project. Follow these steps for a smooth integration:</p>
+
+<ol>
+  <li><strong>Open Your Jekyll Project</strong>
+    <ul>
+      <li>Use <strong>VS Code</strong> to open your Jekyll project that uses our theme.</li>
+    </ul>
+  </li>
+  <li><strong>Download Required Files from GitHub</strong>:
+    <ul>
+      <li><strong>Retrieve <code class="language-plaintext highlighter-rouge">frontmatter.json</code></strong>:
+        <ul>
+          <li>Download the <a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/blob/master/frontmatter.json"><code class="language-plaintext highlighter-rouge">frontmatter.json</code></a> file from our GitHub repository.</li>
+          <li>Save the <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file in the root directory of your Jekyll project.</li>
+        </ul>
+      </li>
+      <li><strong>Retrieve <code class="language-plaintext highlighter-rouge">external.js</code></strong>:
+        <ul>
+          <li>Download the <a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/blob/master/.frontmatter/ui/external.js"><code class="language-plaintext highlighter-rouge">external.js</code></a> file from our GitHub repository.</li>
+          <li>Place the <code class="language-plaintext highlighter-rouge">external.js</code> file in the <code class="language-plaintext highlighter-rouge">.frontmatter/ui/</code> directory within your project folder. Create this directory if it doesn’t already exist.</li>
+        </ul>
+      </li>
+      <li><strong>Retrieve Snippets Configuration Files</strong>:
+        <ul>
+          <li>Download the snippet configuration files from the <a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/tree/master/.frontmatter/config/content/snippets">GitHub snippets directory</a> and place them in the <code class="language-plaintext highlighter-rouge">.frontmatter/config/content/snippets/</code> directory.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Install VS Code Front Matter Extension</strong>
+    <ul>
+      <li>Open the <strong>Extensions</strong> view in VS Code by clicking on the square icon in the sidebar or pressing <code class="language-plaintext highlighter-rouge">Ctrl+Shift+X</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Cmd+Shift+X</code> (macOS).</li>
+      <li>Search for <strong><code class="language-plaintext highlighter-rouge">Front Matter</code></strong> in the Extensions Marketplace.</li>
+      <li>Click <strong>Install</strong> to add the Front Matter extension to VS Code.</li>
+      <li>Ensure the extension is enabled in your VS Code environment after installation.</li>
+    </ul>
+  </li>
+  <li><strong>Configure Your Jekyll Project</strong>
+    <ul>
+      <li>Open the <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file in VS Code.</li>
+      <li>Update the following configurations to match your project’s setup:
+        <ul>
+          <li><strong>site.baseURL</strong>: Update to the base URL of your site.</li>
+          <li><strong>website.host</strong>: Update to the host URL of your website.</li>
+        </ul>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.site.baseURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-site.github.io/"</span><span class="w">
+</span><span class="nl">"frontMatter.website.host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-site.github.io/project-name/"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+      <li>Save the changes to the <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file.</li>
+    </ul>
+  </li>
+  <li><strong>Refresh Front Matter Settings</strong>
+    <ul>
+      <li>Open the Command Palette by pressing <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Cmd+Shift+P</code> (on macOS).</li>
+      <li>Type and select <strong><code class="language-plaintext highlighter-rouge">Front Matter: Refresh Front Matter Settings</code></strong>.</li>
+    </ul>
+  </li>
+  <li><strong>Start Using Front Matter CMS</strong>
+    <ul>
+      <li>Open the Front Matter panel in VS Code to start managing your content efficiently.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Congratulations! You’ve successfully set up Front Matter CMS with your Jekyll theme. For a detailed breakdown of these files and their configurations, refer to the following sections.</p>
+
+<h2 id="3-breakdown-of-frontmatterjson">3. Breakdown of <code class="language-plaintext highlighter-rouge">frontmatter.json</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file is a crucial configuration file for Front Matter CMS, customized to work seamlessly with the Jekyll theme. Below are the key configurations you need to know:</p>
+
+<ul>
+  <li><strong>Schema Declaration</strong>
+    <ul>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">$schema</code></strong>: Ensures the configuration adheres to the defined structure.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"$schema"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://frontmatter.codes/frontmatter.schema.json"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Framework and Public Folder</strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">frontMatter.framework.id</code></strong>: Specifies the framework used, which is Jekyll.</li>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.content.publicFolder</code></strong>: Defines the directory for public assets.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.framework.id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jekyll"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"frontMatter.content.publicFolder"</span><span class="p">:</span><span class="w"> </span><span class="s2">"assets"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Preview Host</strong>
+    <ul>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.preview.host</code></strong>: Sets the local preview host.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.preview.host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://127.0.0.1:4000/project-name/"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Site and Website URLs</strong>
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">frontMatter.site.baseURL</code></strong>: Defines the base URL for your site.</li>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.website.host</code></strong>: Specifies the URL for your website.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.site.baseURL"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-site.github.io/"</span><span class="err">,</span><span class="w">
+</span><span class="nl">"frontMatter.website.host"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://your-site.github.io/project-name/"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Start Command</strong>
+    <ul>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.framework.startCommand</code></strong>: Specifies the command to start the Jekyll server with live reload.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.framework.startCommand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bundle exec jekyll serve --trace --livereload"</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Content Types</strong>
+    <ul>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.taxonomy.contentTypes</code></strong>: Configures the content types with various fields, tailored specifically for our Jekyll theme to ensure seamless integration and enhanced content management.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.taxonomy.contentTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"default"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Layout"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"layout"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"choice"</span><span class="p">,</span><span class="w">  </span><span class="err">//</span><span class="w"> </span><span class="err">Options:</span><span class="w"> </span><span class="err">archive</span><span class="p">,</span><span class="w"> </span><span class="err">page</span><span class="p">,</span><span class="w"> </span><span class="err">post</span><span class="w">
+        </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">"post"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Title"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"title"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Publishing date"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"date"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"datetime"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"default"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"isPublishDate"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"required"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+      </span><span class="p">},</span><span class="w">
+      </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Featured Image"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"image"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fields"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+          </span><span class="err">/*</span><span class="w"> </span><span class="err">Path</span><span class="p">,</span><span class="w"> </span><span class="err">Width</span><span class="p">,</span><span class="w"> </span><span class="err">Height</span><span class="w"> </span><span class="err">fields</span><span class="w"> </span><span class="err">with</span><span class="w"> </span><span class="err">attributes</span><span class="w"> </span><span class="err">*/</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+      </span><span class="p">}</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Extensibility Scripts</strong>
+    <ul>
+      <li>
+        <p><strong><code class="language-plaintext highlighter-rouge">frontMatter.extensibility.scripts</code></strong>: Specifies external scripts for additional functionalities.</p>
+
+        <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nl">"frontMatter.extensibility.scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+  </span><span class="s2">"[[workspace]]/.frontmatter/ui/external.js"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>This <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file provides a comprehensive configuration for managing content in your Jekyll project using Front Matter CMS in VS Code, enabling efficient content management and customization.</p>
+
+<h2 id="4-breakdown-of-externaljs">4. Breakdown of <code class="language-plaintext highlighter-rouge">external.js</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">external.js</code> file is designed to extend the functionality of the Front Matter CMS by registering custom behavior for rendering images in card footers. Here’s a breakdown of its components:</p>
+
+<ul>
+  <li><strong>Imports</strong>:
+    <ul>
+      <li><strong><code class="language-plaintext highlighter-rouge">registerCardImage</code></strong>: A function from the Front Matter extensibility library used to register custom image rendering behavior.</li>
+      <li><strong><code class="language-plaintext highlighter-rouge">enableDevelopmentMode</code></strong>: An optional function that can be enabled for development purposes (commented out by default).</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="p">{</span> <span class="nx">registerCardImage</span><span class="p">,</span> <span class="nx">enableDevelopmentMode</span> <span class="p">}</span> <span class="k">from</span> <span class="dl">"</span><span class="s2">https://cdn.jsdelivr.net/npm/@frontmatter/extensibility/+esm</span><span class="dl">"</span><span class="p">;</span>
+<span class="c1">// enableDevelopmentMode();</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>registerCardImage Function</strong>: This function is used to register a custom image rendering behavior for the card footer in Front Matter CMS.
+    <ul>
+      <li>The function returns an HTML string that renders an image based on the provided metadata. It checks if the <code class="language-plaintext highlighter-rouge">fmPreviewImage</code> metadata is available; if not, it falls back to the path specified in the <code class="language-plaintext highlighter-rouge">metadata.image.path</code> or a default image.</li>
+    </ul>
+
+    <div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">registerCardImage</span><span class="p">(</span><span class="k">async</span> <span class="p">(</span><span class="nx">filePath</span><span class="p">,</span> <span class="nx">metadata</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">image</span> <span class="o">=</span> <span class="nx">metadata</span><span class="p">.</span><span class="nx">fmPreviewImage</span> <span class="p">?</span> <span class="nx">metadata</span><span class="p">.</span><span class="nx">fmPreviewImage</span> <span class="p">:</span> <span class="nx">metadata</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">path</span> <span class="p">?</span> <span class="nx">metadata</span><span class="p">.</span><span class="nx">fmWebviewUrl</span> <span class="o">+</span> <span class="nx">metadata</span><span class="p">.</span><span class="nx">image</span><span class="p">.</span><span class="nx">path</span> <span class="p">:</span> <span class="s2">`</span><span class="p">${</span><span class="nx">metadata</span><span class="p">.</span><span class="nx">fmWebviewUrl</span><span class="p">}</span><span class="s2">/assets/images/write-2160925.svg`</span><span class="p">;</span>
+    <span class="k">return</span> <span class="s2">`&lt;img src="</span><span class="p">${</span><span class="nx">image</span><span class="p">}</span><span class="s2">" alt="</span><span class="p">${</span><span class="nx">metadata</span><span class="p">.</span><span class="nx">title</span><span class="p">}</span><span class="s2">" style="object-fit: cover; margin: auto auto" class="h-36" /&gt;`</span><span class="p">;</span>
+<span class="p">});</span>
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>This script enhances the visual presentation of cards in the Front Matter CMS by dynamically rendering images based on the metadata associated with each file.</p>
+
+<h2 id="5-content-management">5. Content Management</h2>
+
+<h3 id="opening-the-front-mater-dashboard">Opening the Front Mater dashboard</h3>
+
+<figure class="text-center"><amp-img width="1105" height="841" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-dashboard_1105x841.webp" alt="Front Matter dashboard on the contents view" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="1105" height="841" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-dashboard_1105x841.png" alt="Front Matter dashboard on the contents view" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img><figcaption>Front Matter dashboard on the contents view</figcaption></figure>
+
+<p>To open the <a href="https://frontmatter.codes/docs/dashboard">Front Matter dashboard</a>, follow these steps:</p>
+
+<ol>
+  <li><strong>Open the Command Palette</strong>: You can do this by pressing <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Cmd+Shift+P</code> (macOS).</li>
+  <li><strong>Search for Dashboard Commands</strong>: Type <code class="language-plaintext highlighter-rouge">Front Matter: Open dashboard</code> and select it from the list.</li>
+  <li><strong>Access the Dashboard</strong>: The dashboard will open in a new panel within VS Code. You can navigate through your content, media, and other views from here.</li>
+</ol>
+
+<p>Alternatively, you can use keyboard shortcuts:</p>
+
+<ul>
+  <li><strong>Windows/Linux</strong>: Press <code class="language-plaintext highlighter-rouge">Alt+D</code>.</li>
+  <li><strong>macOS</strong>: Press <code class="language-plaintext highlighter-rouge">Options+D</code>.</li>
+</ul>
+
+<p>Once the dashboard is open, you can easily access the editor panel to manage and edit your content.</p>
+
+<h3 id="opening-the-front-matter-editor-panel">Opening the Front Matter Editor Panel</h3>
+
+<figure class="text-center"><amp-img width="1468" height="664" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-editor-panel_1468x664.webp" alt="Front Matter editor panel" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="1468" height="664" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-editor-panel_1468x664.png" alt="Front Matter editor panel" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img><figcaption>Front Matter editor panel</figcaption></figure>
+
+<ol>
+  <li><strong>Open the Command Palette</strong>:
+    <ul>
+      <li>Press <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> (Windows/Linux) or <code class="language-plaintext highlighter-rouge">Cmd+Shift+P</code> (macOS) to open the Command Palette.</li>
+    </ul>
+  </li>
+  <li><strong>Open the Front Matter Panel</strong>:
+    <ul>
+      <li>Type <code class="language-plaintext highlighter-rouge">FM: Focus on Front Matter View</code> in the Command Palette and select it from the list.</li>
+    </ul>
+  </li>
+  <li><strong>Access the Editor Panel</strong>:
+    <ul>
+      <li>The Front Matter panel will open on the side of your VS Code window.</li>
+      <li>From this panel, you can explore various sections such as SEO status, metadata, extension actions, and recently modified files.</li>
+      <li>The editor panel allows you to create, edit, and manage your content with ease.</li>
+      <li>It offers a user-friendly interface to input and update metadata fields for your content.</li>
+    </ul>
+  </li>
+</ol>
+
+<p>By using the Front Matter editor panel, you can streamline content creation and management, making the process easier and more efficient in VS Code.</p>
+
+<h3 id="creating-content">Creating Content</h3>
+
+<p>Front Matter CMS simplifies the process of creating new content. To create a new post or page:</p>
+
+<ol>
+  <li>Click on the <strong>“Create Content”</strong> button from the Front Matter dashboard or editor panel.</li>
+  <li>Fill in the required fields based on your configured content types and fields.</li>
+  <li>Save the content to generate a new Markdown file in the appropriate directory.</li>
+</ol>
+
+<figure class="text-center"><amp-img width="275" height="602" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-featured-image_275x602.webp" alt="Metadata on Front Matter editor panel" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="275" height="602" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-featured-image_275x602.png" alt="Metadata on Front Matter editor panel" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img><figcaption>Metadata on Front Matter editor panel</figcaption></figure>
+
+<h3 id="editing-content">Editing Content</h3>
+
+<p>To edit existing content:</p>
+
+<ol>
+  <li>Open to the Front Matter dashboard.</li>
+  <li>Select the post or page you want to edit.</li>
+  <li>Make the necessary changes in the provided fields.</li>
+  <li>Save the content to update the Markdown file.</li>
+</ol>
+
+<h3 id="previewing-content">Previewing Content</h3>
+
+<figure><amp-img width="1422" height="701" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-preview_1422x701.webp" alt="Preview content" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="1422" height="701" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-preview_1422x701.png" alt="Preview content" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img></figure>
+
+<p>Front Matter CMS allows you to see a real-time preview of the content you are editing:</p>
+
+<ol>
+  <li>Open the post or page you want to edit.</li>
+  <li>In the editor panel, click the <strong>“Start server”</strong> button to start the Jekyll server on your local machine.</li>
+  <li>Click the <strong>“Open preview”</strong> button in the editor panel to open the preview pane next to the editor in VS Code.</li>
+  <li>Make your changes in the editor.</li>
+  <li>The preview pane will automatically update to reflect your changes, providing a live view of how your content will look on your site.</li>
+</ol>
+
+<p>By following these steps, you can efficiently preview your content and make adjustments in real-time, ensuring your edits are accurately reflected on your site.</p>
+
+<h3 id="using-snippets">Using Snippets</h3>
+
+<p>Front Matter CMS provides a convenient way to manage and create content with customizable snippets. Here’s a brief guide on how to use the various snippets available:</p>
+
+<h4 id="amp-snippets">AMP Snippets</h4>
+
+<p><strong>AMP Gist Snippets</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Embed a gist or single file from a gist using the <code class="language-plaintext highlighter-rouge">amp-gist</code> component.</li>
+</ul>
+
+<p><strong>AMP Audio Snippets</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Embed an audio element on an AMP page using the <code class="language-plaintext highlighter-rouge">amp-audio</code> component.</li>
+</ul>
+
+<h4 id="image-and-video-snippets">Image and Video Snippets</h4>
+
+<p><strong>Image Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert an image using the <code class="language-plaintext highlighter-rouge">picture.html</code> template with attributes for alt text and figure caption.</li>
+</ul>
+
+<p><strong>YouTube Snippets</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Embed a YouTube video or playlist using the <code class="language-plaintext highlighter-rouge">youtube.html</code> template.</li>
+</ul>
+
+<h4 id="content-management-snippets">Content Management Snippets</h4>
+
+<p><strong>Table of Contents (TOC) Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert a TOC using the <code class="language-plaintext highlighter-rouge">toc.md</code> template.</li>
+</ul>
+
+<p><strong>Excerpt Separator Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert <code class="language-plaintext highlighter-rouge">&lt;!--more--&gt;</code> to define a custom excerpt in markdown content.</li>
+</ul>
+
+<h4 id="kramdown-snippets">Kramdown Snippets</h4>
+
+<p><strong>Inline Attribute Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Add HTML attributes to any element using kramdown inline attribute list syntax.</li>
+  <li><strong>Snippet:</strong> Specify the attributes within the snippet.</li>
+</ul>
+
+<p><strong>Comment Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert kramdown comments to exclude text from output while keeping it in the source.</li>
+</ul>
+
+<p><strong>NoMarkdown Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Escape kramdown processing for selected text.</li>
+</ul>
+
+<p><strong>Footnote Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Create a footnote and link it to a reference number using kramdown footnote syntax.</li>
+</ul>
+
+<p><strong>Abbreviation Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Create an abbreviation using kramdown abbreviation syntax.</li>
+</ul>
+
+<p><strong>Math Block Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Convert text with LaTeX mathematics into a math block using kramdown syntax.</li>
+</ul>
+
+<p><strong>End-of-Block Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert an EOB marker to end a kramdown block element.</li>
+</ul>
+
+<p><strong>Parse Block HTML Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Enable kramdown processing in block HTML tags.</li>
+</ul>
+
+<h4 id="jekyll-snippets">Jekyll Snippets</h4>
+
+<p><strong>Link Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Generate the correct permalink URL of a file using the Jekyll <code class="language-plaintext highlighter-rouge">link</code> tag.</li>
+</ul>
+
+<p><strong>Post URL Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Generate the correct permalink URL of a post using the Jekyll <code class="language-plaintext highlighter-rouge">post_url</code> tag.</li>
+</ul>
+
+<p><strong>Highlight Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Apply the Jekyll <code class="language-plaintext highlighter-rouge">highlight</code> tag to format selected content as a code block.</li>
+</ul>
+
+<p><strong>Raw Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Escape Liquid filters using the Jekyll <code class="language-plaintext highlighter-rouge">raw</code> tag.</li>
+</ul>
+
+<p><strong>Capture Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Create a variable from selected content using Jekyll <code class="language-plaintext highlighter-rouge">capture</code> tags.</li>
+</ul>
+
+<p><strong>Cite Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert citations with Jekyll-Scholar cite tag.</li>
+</ul>
+
+<p><strong>Bibliography Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert a bibliography using the Jekyll-Scholar plugin.</li>
+</ul>
+
+<p><strong>Callout Snippet</strong>:</p>
+
+<ul>
+  <li><strong>Usage:</strong> Insert a callout using the Jekyll capture tag.</li>
+</ul>
+
+<p>By using these snippets, you can streamline your content creation process, making it more efficient and structured.</p>
+
+<h3 id="managing-taxonomies">Managing Taxonomies</h3>
+
+<figure class="text-center"><amp-img width="1109" height="632" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-taxonomies_1109x632.webp" alt="Front Matter dashboard on the taxonomies view" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="1109" height="632" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/frontmatter-taxonomies_1109x632.png" alt="Front Matter dashboard on the taxonomies view" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img><figcaption>Front Matter dashboard on the taxonomies view</figcaption></figure>
+
+<p>Front Matter CMS also provides powerful taxonomy management to help you organize your content effectively. Taxonomies include categories, tags, and other custom taxonomies that you can define to classify your content.</p>
+
+<p>By leveraging the taxonomy management capabilities of Front Matter CMS, you can maintain a well-organized content structure, making it easier for both you and your site visitors to navigate and find content.</p>
+
+<h2 id="6-troubleshooting">6. Troubleshooting</h2>
+
+<h3 id="common-issues">Common Issues</h3>
+
+<p>Here are some common issues you might encounter while using Front Matter CMS with Jekyll and their solutions:</p>
+
+<ul>
+  <li><strong>Configuration Errors</strong>: Ensure that your <code class="language-plaintext highlighter-rouge">frontmatter.json</code> configuration file is correctly formatted and contains all required fields.</li>
+  <li><strong>Preview Issues</strong>: Verify that the <code class="language-plaintext highlighter-rouge">preview.host</code> and <code class="language-plaintext highlighter-rouge">site.baseURL</code> settings are correctly configured in your <code class="language-plaintext highlighter-rouge">frontmatter.json</code> file.</li>
+  <li><strong>Content Rendering Problems</strong>: Check for syntax errors in your Markdown files and ensure that all necessary plugins and dependencies are installed.</li>
+</ul>
+
+<h3 id="support-resources">Support Resources</h3>
+
+<p>If you encounter any issues or need further assistance, you can refer to the following resources:</p>
+
+<ul>
+  <li><strong>Front Matter CMS Documentation</strong>: <a href="https://frontmatter.codes/docs/">https://frontmatter.codes/docs/</a></li>
+  <li><strong>Jekyll Documentation</strong>: <a href="https://jekyllrb.com/docs/">https://jekyllrb.com/docs/</a></li>
+  <li><strong>Community Support</strong>: Reach out to the Jekyll and Front Matter CMS communities for help and advice.</li>
+</ul>
+
+<h2 id="7-conclusion">7. Conclusion</h2>
+
+<p>Front Matter CMS provides a powerful and user-friendly solution for managing content in Jekyll projects. By leveraging its features, you can streamline your content creation and management processes, making it easier to maintain and update your Jekyll site. With this documentation, you should be well-equipped to set up, configure, and use Front Matter CMS effectively within your Jekyll projects. 👨‍💻 <em>Happy coding!</em> 🚀</p>]]></content><author><name></name></author><category term="[&quot;doc&quot;]" /><category term="CMS" /><category term="front matter" /><category term="vscode" /><category term="plugin" /><summary type="html"><![CDATA[Effortlessly manage your Jekyll site with Front Matter CMS. Streamline content creation and editing with a user-friendly interface and real-time previews.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/map-3314277.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/map-3314277.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Using AMP YouTube Components</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/using-amp-youtube/" rel="alternate" type="text/html" title="Using AMP YouTube Components" /><published>2024-11-23T13:30:00+00:00</published><updated>2024-12-05T02:12:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/amp-youtube</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/using-amp-youtube/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#features" id="markdown-toc-features">Features</a></li>
+  <li><a href="#usage" id="markdown-toc-usage">Usage</a>    <ul>
+      <li><a href="#frontmatter-setup" id="markdown-toc-frontmatter-setup">Frontmatter Setup</a></li>
+      <li><a href="#embedding-youtube-videos" id="markdown-toc-embedding-youtube-videos">Embedding YouTube Videos</a></li>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a>        <ul>
+          <li><a href="#embedding-a-single-video" id="markdown-toc-embedding-a-single-video">Embedding a Single Video</a></li>
+          <li><a href="#embedding-a-playlist" id="markdown-toc-embedding-a-playlist">Embedding a Playlist</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#analytics-integration" id="markdown-toc-analytics-integration">Analytics Integration</a>    <ul>
+      <li><a href="#tracked-events" id="markdown-toc-tracked-events">Tracked Events</a></li>
+    </ul>
+  </li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<p>This Jekyll theme integrates AMP (Accelerated Mobile Pages) components to enhance the performance and user experience of embedded YouTube videos. The AMP YouTube component is specifically designed to ensure fast loading times and a responsive design, making it ideal for modern web development.</p>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li><strong>Responsive Video Embedding</strong>: The <code class="language-plaintext highlighter-rouge">&lt;amp-youtube&gt;</code> component automatically adjusts to different screen sizes, ensuring that videos are displayed optimally on all devices.</li>
+  <li><strong>Focused User Experience</strong>: We’ve set the <a href="https://developers.google.com/youtube/player_parameters#rel"><code class="language-plaintext highlighter-rouge">rel=0</code></a> parameter to the YouTube Player ensures that related videos shown after the video ends will come from the same channel, maintaining a focused user experience.</li>
+  <li><strong>Enhanced Tracking</strong>: <span class="badge badge-success">v3.1</span> With Google Analytics 4 (GA4) integration, you can track user interactions with your YouTube videos, including play, pause, and completion events. For more details, see the <a href="#analytics-integration">Analytics Integration</a> section.</li>
+  <li><strong>Playlist Support</strong>: You can embed individual YouTube videos or entire playlists, providing flexibility in content presentation.</li>
+  <li><strong>Privacy-Enhanced Mode</strong>: <span class="badge badge-success">v3.2</span> We’ve added the <a href="https://amp.dev/documentation/components/amp-youtube#credentials-(optional)"><code class="language-plaintext highlighter-rouge">credentials="omit"</code></a> attribute to the <code class="language-plaintext highlighter-rouge">&lt;amp-youtube&gt;</code> component to improve user privacy. This attribute prevents tracking when videos are embedded, offering a more privacy-focused experience.</li>
+  <li><strong>Fallback Support</strong>: For browsers that do not support the AMP YouTube player, a fallback message is provided, allowing users to watch the video directly on YouTube.</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<p>To embed YouTube videos using the <code class="language-plaintext highlighter-rouge">amp-youtube</code> extension in your Jekyll project, you must include specific frontmatter in your markdown files. This ensures that the your AMP page incorporates the necessary components for video embedding.</p>
+
+<h3 id="frontmatter-setup">Frontmatter Setup</h3>
+
+<p>Add the following frontmatter to your markdown file to enable the <code class="language-plaintext highlighter-rouge">amp-youtube</code> extension:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Post</span><span class="nv"> </span><span class="s">Title"</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2024-11-23</span>
+<span class="na">amp</span><span class="pi">:</span>
+  <span class="na">youtube</span><span class="pi">:</span> <span class="no">true</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<h3 id="embedding-youtube-videos">Embedding YouTube Videos</h3>
+
+<p>To embed a YouTube video, use the <code class="language-plaintext highlighter-rouge">youtube.html</code> template in your project. You can customize the embedding by providing the following parameters:</p>
+
+<ul>
+  <li><strong>id</strong>: The unique identifier for the YouTube video.</li>
+  <li><strong>playlist</strong> (optional): The playlist ID for embedding a playlist.</li>
+  <li><strong>title</strong> (optional): The title of the video for accessibility and tracking.</li>
+  <li><strong>indent</strong> (optional): The leading whitespace for resolving indentation issues with the include tag.</li>
+</ul>
+
+<h3 id="examples">Examples</h3>
+
+<h4 id="embedding-a-single-video">Embedding a Single Video</h4>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>youtube.html<span class="w"> </span><span class="na">id</span><span class="o">=</span><span class="s2">"VIDEO_ID"</span><span class="w"> </span><span class="na">title</span><span class="o">=</span><span class="s2">"VIDEO_TITLE"</span><span class="w"> </span><span class="na">indent</span><span class="o">=</span><span class="s2">"  "</span><span class="w"> </span><span class="p">%}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>Example Video 1:
+    <amp-youtube id="yt-8jumRGDgxiY" width="480" height="270" layout="responsive" credentials="omit" data-videoid="8jumRGDgxiY" title="GSP319 Build a Website on Google Cloud: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-title="GSP319 Build a Website on Google Cloud: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-url="https://www.youtube.com/watch?v=8jumRGDgxiY" data-param-rel="0">
+<div fallback="">
+  <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=8jumRGDgxiY" rel="noopener" target="_blank">Watch on YouTube</a></p>
+</div>
+</amp-youtube>
+  </li>
+  <li>Example Vdieo 2:
+    <amp-youtube id="yt-hkVAY9B0oOI" width="480" height="270" layout="responsive" credentials="omit" data-videoid="hkVAY9B0oOI" title="GSP346 Exploring Data with Looker: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-title="GSP346 Exploring Data with Looker: Challenge Lab | 🐱‍🏍 GCP learning tour" data-vars-video-url="https://www.youtube.com/watch?v=hkVAY9B0oOI" data-param-rel="0">
+<div fallback="">
+  <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=hkVAY9B0oOI" rel="noopener" target="_blank">Watch on YouTube</a></p>
+</div>
+</amp-youtube>
+  </li>
+</ul>
+
+<h4 id="embedding-a-playlist">Embedding a Playlist</h4>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="p">{%</span><span class="w"> </span><span class="nt">include</span><span class="w"> </span>youtube.html<span class="w"> </span><span class="na">id</span><span class="o">=</span><span class="s2">"VIDEO_ID"</span><span class="w"> </span><span class="na">playlist</span><span class="o">=</span><span class="s2">"PLAYLIST_ID"</span><span class="w"> </span><span class="na">title</span><span class="o">=</span><span class="s2">"PLAYLIST_TITLE"</span><span class="w"> </span><span class="p">%}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <p>Example Playlist:</p>
+
+    <amp-youtube id="yt-C49jYtIMAsg" width="480" height="270" layout="responsive" credentials="omit" data-videoid="C49jYtIMAsg" data-param-listType="playlist" data-param-list="PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" title="Demos of Qwiklabs Challenge Labs - YouTube" data-vars-video-title="Demos of Qwiklabs Challenge Labs - YouTube" data-vars-video-url="https://www.youtube.com/watch?v=C49jYtIMAsg&amp;list=PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" data-param-rel="0">
+<div fallback="">
+  <p>This browser does not support the YouTube video player. <a href="https://www.youtube.com/watch?v=C49jYtIMAsg&amp;list=PLmQ8R1QWYBV72R3JoEWzIH1onqIiai6d0" rel="noopener" target="_blank">Watch on YouTube</a></p>
+</div>
+</amp-youtube>
+  </li>
+</ul>
+
+<h2 id="analytics-integration">Analytics Integration</h2>
+
+<p>The theme supports <a href="/amp-jekyll-theme-with-sirdata-consent/google-analytics-4/#%EF%B8%8F-video-engagement">Google Analytics 4 (GA4) for tracking video interactions</a>. The <code class="language-plaintext highlighter-rouge">site_content_postproc.html</code> template processes AMP YouTube components to configure GA4 tracking. It extracts video IDs from <code class="language-plaintext highlighter-rouge">&lt;amp-youtube&gt;</code> tags and constructs CSS selectors for these components, enabling detailed analytics on video interactions.</p>
+
+<h3 id="tracked-events">Tracked Events</h3>
+
+<ul>
+  <li><strong>Video Play</strong>: Triggered when a video starts playing.</li>
+  <li><strong>Video Pause</strong>: Triggered when a video is paused.</li>
+  <li><strong>Video Progress</strong>: Tracks progress milestones at 10%, 25%, 50%, 75%, and 100%.</li>
+  <li><strong>Video Completion</strong>: Triggered when a video finishes playing.</li>
+</ul>
+
+<p>By leveraging the AMP YouTube component, this theme provides a robust solution for embedding videos that are fast, responsive, and analytics-ready, enhancing both performance and user engagement.</p>]]></content><author><name></name></author><category term="[&quot;feature&quot;]" /><category term="youtube" /><summary type="html"><![CDATA[The demo and test page of the Anchor Links for headings and the Link Modifier on various Markdown styles.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/youtube-6949586.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/youtube-6949586.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Google Analytics 4 for AMP Features</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/google-analytics-4/" rel="alternate" type="text/html" title="Google Analytics 4 for AMP Features" /><published>2024-11-21T03:22:00+00:00</published><updated>2024-11-28T13:11:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/google-analytics-4</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/google-analytics-4/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#-setting-up-ga4-for-amp" id="markdown-toc--setting-up-ga4-for-amp">🔧 Setting Up GA4 for AMP</a></li>
+  <li><a href="#️-advanced-configuration-in-ga4-v32" id="markdown-toc-️-advanced-configuration-in-ga4-v32">⚙️ Advanced Configuration in GA4 <span class="badge badge-success">v3.2</span></a>    <ul>
+      <li><a href="#-cache-vs-non-cache-analysis" id="markdown-toc--cache-vs-non-cache-analysis">🌐 Cache vs. Non-Cache Analysis</a></li>
+      <li><a href="#-filtering-out-developer-traffic" id="markdown-toc--filtering-out-developer-traffic">🚧 Filtering Out Developer Traffic</a></li>
+    </ul>
+  </li>
+  <li><a href="#-supported-features" id="markdown-toc--supported-features">✨ Supported Features</a>    <ul>
+      <li><a href="#-page-view-tracking" id="markdown-toc--page-view-tracking">👀 Page View Tracking</a></li>
+      <li><a href="#-event-tracking-v31" id="markdown-toc--event-tracking-v31">🧿 Event Tracking <span class="badge badge-success">v3.1</span></a>        <ul>
+          <li><a href="#️-outbound-link-clicks" id="markdown-toc-️-outbound-link-clicks">↗️ Outbound Link Clicks</a></li>
+          <li><a href="#️-video-engagement" id="markdown-toc-️-video-engagement">⏯️ Video Engagement</a></li>
+        </ul>
+      </li>
+      <li><a href="#debugging-amp-analytics" id="markdown-toc-debugging-amp-analytics">Debugging AMP Analytics</a></li>
+    </ul>
+  </li>
+  <li><a href="#references" id="markdown-toc-references">References</a></li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><strong>Google Analytics 4 (GA4)</strong> is the latest version of Google’s analytics platform, offering enhanced tracking and insights capabilities. One of the standout strengths of this AMP-based Jekyll theme is its seamless integration with GA4, enabling you to monitor user interactions and optimize your content based on real-time data. This powerful feature ensures you have access to comprehensive analytics without sacrificing the performance benefits of AMP.</p>
+
+<h2 id="-setting-up-ga4-for-amp">🔧 Setting Up GA4 for AMP</h2>
+
+<p>To set up GA4 with your AMP pages, follow these steps:</p>
+
+<ol>
+  <li><strong>Obtain Your Measurement ID</strong>: Ensure you have set up your GA4 property and obtained the Measurement ID (<code class="language-plaintext highlighter-rouge">G-XXXXXXX</code>).</li>
+  <li><strong>Configure Your Site’s Settings</strong>: Add the GA4 Measurement ID to your site’s settings as described in the <a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/#-google-analytics">Config Guide</a>.</li>
+</ol>
+
+<p>By following these steps, you’ll be able to start tracking user interactions on your AMP pages with GA4.</p>
+
+<h2 id="️-advanced-configuration-in-ga4-v32">⚙️ Advanced Configuration in GA4 <span class="badge badge-success">v3.2</span></h2>
+
+<h3 id="-cache-vs-non-cache-analysis">🌐 Cache vs. Non-Cache Analysis</h3>
+
+<p>To gain a deeper understanding of how users interact with AMP pages served from the cache versus your own domain, you need to register the custom parameter <code class="language-plaintext highlighter-rouge">ampHost</code> in your Google Analytics 4 (GA4) property. Follow these steps to set it up:</p>
+
+<ol>
+  <li>Go to your GA4 property in the Google Analytics dashboard.</li>
+  <li>Navigate to the “Admin” section.</li>
+  <li>Under the “Property” column, click on “Custom Definitions”.</li>
+  <li>Click on “Create Custom Dimension”.</li>
+  <li>Enter <code class="language-plaintext highlighter-rouge">ampHost</code> as the name and select the appropriate scope (e.g., Event).</li>
+  <li>Save the custom dimension.</li>
+</ol>
+
+<p>By following these steps, you will have successfully registered the custom parameter <code class="language-plaintext highlighter-rouge">ampHost</code> in your GA4 property, enabling you to track where your AMP page is served.</p>
+
+<p>For more detailed instructions, you can refer to the <a href="https://support.google.com/analytics/answer/13707678?hl=en">Google Analytics 4 documentation</a> and this <a href="https://stackoverflow.com/questions/76622349/how-is-the-configuration-of-google-analytics-4-with-amp">Stack Overflow page</a>.</p>
+
+<h3 id="-filtering-out-developer-traffic">🚧 Filtering Out Developer Traffic</h3>
+
+<p>To ensure the accuracy of your analytics data, it’s important to filter out activity from developers who use debug mode. This prevents their activity from appearing in your reports, allowing you to focus on real user interactions. Follow these steps to set up a filter for developer traffic in GA4:</p>
+
+<ol>
+  <li>Go to your GA4 property in the Google Analytics dashboard.</li>
+  <li>Navigate to the “Admin” section.</li>
+  <li>Under “Property”, click “Data Filters”.</li>
+  <li>Click “Create Filter”.</li>
+  <li>Choose “Developer Traffic”, select “Exclude”, and choose the filter state: Testing, Active, or Inactive.</li>
+  <li>Click “Create” to save the filter.</li>
+</ol>
+
+<p>When you activate the data filter, Google Analytics will filter out any data collected from users when debug mode is enabled. This allows you to test in your property without disrupting the data in your reports.</p>
+
+<p>For more details, refer to the <a href="https://support.google.com/analytics/answer/13296662?hl=en">Google Analytics 4 documentation</a>.</p>
+
+<h2 id="-supported-features">✨ Supported Features</h2>
+
+<p><strong>Important</strong>: Please be aware that the current GA4 configuration for AMP does not support the automatic capture of <a href="https://support.google.com/analytics/answer/9216061?sjid=7071883456625746694-AP">GA4 Enhanced Measurement events</a>.</p>
+
+<h3 id="-page-view-tracking">👀 Page View Tracking</h3>
+
+<p>The theme enables GA4 to track page views on AMP pages, providing essential insights into user behavior and engagement.</p>
+
+<h3 id="-event-tracking-v31">🧿 Event Tracking <span class="badge badge-success">v3.1</span></h3>
+
+<p>The theme supports detailed event tracking, including the following configurations:</p>
+
+<h4 id="️-outbound-link-clicks">↗️ Outbound Link Clicks</h4>
+
+<p>When GA4 is configured, a click event named <code class="language-plaintext highlighter-rouge">outgoing_click</code> is sent whenever a user clicks an external link. This feature provides insights into which external links are most engaging and which partnerships drive the most traffic.</p>
+
+<p><strong>Event Details</strong>:</p>
+
+<ul>
+  <li><strong>Event name</strong>: <code class="language-plaintext highlighter-rouge">outgoing_click</code></li>
+  <li><strong>Page location</strong>: The URL of the webpage where the link is clicked (e.g., <code class="language-plaintext highlighter-rouge">https://www.yourdomain.com/about/</code>).</li>
+  <li><strong>Page title</strong>: The HTML title of the webpage where the link is clicked (e.g., <code class="language-plaintext highlighter-rouge">About Us</code>).</li>
+  <li><strong>Link URL</strong>: The URL of the clicked link (e.g., <code class="language-plaintext highlighter-rouge">https://www.example.com</code>), if the outbound link element includes the <code class="language-plaintext highlighter-rouge">data-vars-event-label</code> attribute.</li>
+  <li><strong>Outbound</strong>: Indicates if the click was on an outbound link. Value: <code class="language-plaintext highlighter-rouge">true</code>.</li>
+</ul>
+
+<p><strong>Note</strong>: This theme does not support the <code class="language-plaintext highlighter-rouge">link_classes</code>, <code class="language-plaintext highlighter-rouge">link_domain</code>, and <code class="language-plaintext highlighter-rouge">link_id</code> parameters available in GA4 for non-AMP pages. To overcome the limitations of GA4 for AMP, our theme implements a workaround for the <code class="language-plaintext highlighter-rouge">link_url</code> parameter.</p>
+
+<p>During the site build process, this theme automatically updates each external link within your post content by adding a <code class="language-plaintext highlighter-rouge">data-vars-event-label</code> attribute and copying the URL from the <code class="language-plaintext highlighter-rouge">href</code> attribute. This modification creates a data variable for the <code class="language-plaintext highlighter-rouge">&lt;amp-analytics&gt;</code> component, allowing it to capture and pass the URL of the clicked link as the <code class="language-plaintext highlighter-rouge">link_url</code> parameter.</p>
+
+<h4 id="️-video-engagement">⏯️ Video Engagement</h4>
+
+<p>The theme tracks user engagement with YouTube embedded videos inserted using <code class="language-plaintext highlighter-rouge">amp-youtube</code> components. User interactions are captured through various events, providing valuable insights into how users interact with your video content.</p>
+
+<p><strong>Event Details</strong>:</p>
+
+<ul>
+  <li><strong>Video Play</strong>: Triggered when a video starts playing.
+    <ul>
+      <li><strong>Event name</strong>: <code class="language-plaintext highlighter-rouge">video_start</code></li>
+    </ul>
+  </li>
+  <li><strong>Video Pause</strong>: Triggered when a video is paused.
+    <ul>
+      <li><strong>Event name</strong>: <code class="language-plaintext highlighter-rouge">video_paused</code></li>
+    </ul>
+  </li>
+  <li><strong>Video Percentage Played</strong>: Triggered at specific percentages of video playback (10%, 25%, 50%, 75%).
+    <ul>
+      <li><strong>Event name</strong>: <code class="language-plaintext highlighter-rouge">video_progress</code></li>
+    </ul>
+  </li>
+  <li><strong>Video Ended</strong>: Triggered when a video finishes playing.
+    <ul>
+      <li><strong>Event name</strong>: <code class="language-plaintext highlighter-rouge">video_complete</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>The events capture comprehensive video details such as:</p>
+
+<ul>
+  <li><strong>Current Time</strong>: The current playback time in seconds.</li>
+  <li><strong>Duration</strong>: The total length of the video in seconds.</li>
+  <li><strong>Percentage Played</strong>: The percentage of the video that has been watched, calculated dynamically as <code class="language-plaintext highlighter-rouge">(Current Time / Duration) * 100</code>.</li>
+  <li><strong>Provider</strong>: Always <code class="language-plaintext highlighter-rouge">youtube</code>.</li>
+  <li><strong>Title</strong>: The title of the video, captured dynamically and passed to GA4 as the <code class="language-plaintext highlighter-rouge">video_title</code> parameter if the <code class="language-plaintext highlighter-rouge">amp-youtube</code> component includes the <code class="language-plaintext highlighter-rouge">data-vars-video-title</code> attribute (e.g., <code class="language-plaintext highlighter-rouge">Video published on Jan 2024</code>).</li>
+  <li><strong>URL</strong>: The original URL of the video, captured dynamically and passed to GA4 as the <code class="language-plaintext highlighter-rouge">video_url</code> parameter if the <code class="language-plaintext highlighter-rouge">amp-youtube</code> component includes the <code class="language-plaintext highlighter-rouge">data-vars-video-url</code> attribute (e.g., <code class="language-plaintext highlighter-rouge">https://www.youtube.com/watch?v=XXXXXXXXXXX</code>).</li>
+</ul>
+
+<p><strong>Note</strong>: This theme does not support the <code class="language-plaintext highlighter-rouge">visible</code> (boolean) parameter found in GA4 for non-AMP pages. For more information, please refer to the <a href="https://support.google.com/analytics/table/13948007?hl=en#query=visible">GA4 Analytics dimensions and metrics</a>.</p>
+
+<p>For accurate data capture and enhanced video engagement tracking, we recommend using our <code class="language-plaintext highlighter-rouge">youtube.html</code> template to <a href="/amp-jekyll-theme-with-sirdata-consent/using-amp-youtube/">embed YouTube videos</a> on your pages. This ensures that <code class="language-plaintext highlighter-rouge">&lt;amp-youtube&gt;</code> components include data variables with properly formatted values derived from the <code class="language-plaintext highlighter-rouge">id</code> and <code class="language-plaintext highlighter-rouge">title</code> parameters provided by the <code class="language-plaintext highlighter-rouge">include</code> tag.</p>
+
+<h3 id="debugging-amp-analytics">Debugging AMP Analytics</h3>
+
+<p>Use Google’s debugging tools to troubleshoot and resolve issues with your AMP analytics setup.</p>
+
+<h2 id="references">References</h2>
+
+<p>For more detailed instructions and information, refer to these reliable sources:</p>
+
+<ul>
+  <li><a href="https://developers.google.com/tag-platform/gtagjs/amp?technology=gtagjs">Tag setup for AMP  |  gtag.js  |  Google for Developers</a></li>
+  <li><a href="https://amp.dev/documentation/components/amp-analytics">Documentation: &lt;amp-analytics&gt; - amp.dev</a></li>
+</ul>]]></content><author><name></name></author><category term="[&quot;feature&quot;]" /><category term="analytics" /><summary type="html"><![CDATA[Integrate GA4 with AMP in Jekyll for real-time analytics. Track user interactions, page views, and video engagement seamlessly with enhanced insights.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/analytics-3201151.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/analytics-3201151.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Footer Configuration</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/footer-configuration/" rel="alternate" type="text/html" title="Footer Configuration" /><published>2024-11-05T08:01:00+00:00</published><updated>2024-11-05T08:01:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/footer-configuration</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/footer-configuration/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#footer-columns-configuration" id="markdown-toc-footer-columns-configuration">Footer Columns Configuration</a>    <ul>
+      <li><a href="#configuration-example" id="markdown-toc-configuration-example">Configuration Example</a></li>
+      <li><a href="#detailed-breakdown" id="markdown-toc-detailed-breakdown">Detailed Breakdown</a></li>
+    </ul>
+  </li>
+  <li><a href="#bottom-bar-configuration" id="markdown-toc-bottom-bar-configuration">Bottom Bar Configuration</a>    <ul>
+      <li><a href="#copyright-notice" id="markdown-toc-copyright-notice">Copyright Notice</a></li>
+      <li><a href="#privacy-policy-link" id="markdown-toc-privacy-policy-link">Privacy Policy Link</a></li>
+    </ul>
+  </li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<hr />
+
+<p>Starting from version <span class="badge badge-success">v3.1.0</span>, our theme’s footer has been enhanced to allow customization of the second and third columns (<code class="language-plaintext highlighter-rouge">col1</code> and <code class="language-plaintext highlighter-rouge">col2</code>) directly through the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. Additionally, we provide configurable options for copyright notices and privacy policy links that were available in previous versions.</p>
+
+<h2 id="footer-columns-configuration">Footer Columns Configuration</h2>
+
+<h3 id="configuration-example">Configuration Example</h3>
+
+<p>To define the titles and link lists for <code class="language-plaintext highlighter-rouge">col1</code> and <code class="language-plaintext highlighter-rouge">col2</code>, add the following YAML configuration in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Footer Features</span>
+<span class="na">footer</span><span class="pi">:</span>
+  <span class="na">col1</span><span class="pi">:</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s">Resources</span>
+    <span class="na">items</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Design Guidelines</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/resources/design-guidelines/</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Style Guide</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/resources/style-guide/</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Media Library</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/resources/media-library/</span>
+  <span class="na">col2</span><span class="pi">:</span>
+    <span class="na">title</span><span class="pi">:</span> <span class="s">Documentation</span>
+    <span class="na">items</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Getting Started</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/getting-started/</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">API Reference</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/api-reference/</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Plugin Guide</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/plugin-guide/</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Configuration</span>
+        <span class="na">url</span><span class="pi">:</span> <span class="s">/docs/configuration/</span>
+</code></pre></div></div>
+
+<h3 id="detailed-breakdown">Detailed Breakdown</h3>
+
+<ul>
+  <li><strong><code class="language-plaintext highlighter-rouge">col1</code> Configuration:</strong>
+    <ul>
+      <li><strong>title:</strong> Sets the column title.</li>
+      <li><strong>items:</strong> Defines a list of links for the column.
+        <ul>
+          <li><strong>name:</strong> The display name of the link.</li>
+          <li><strong>url:</strong> The target URL for the link.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong><code class="language-plaintext highlighter-rouge">col2</code> Configuration:</strong>
+    <ul>
+      <li><strong>title:</strong> Sets the column title.</li>
+      <li><strong>items:</strong> Defines a list of links for the column.
+        <ul>
+          <li><strong>name:</strong> The display name of the link.</li>
+          <li><strong>url:</strong> The target URL for the link.</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="bottom-bar-configuration">Bottom Bar Configuration</h2>
+
+<p>In addition to configuring the footer columns, the following bottom bar settings are available for customization:</p>
+
+<h3 id="copyright-notice">Copyright Notice</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">copyright</code></td>
+      <td> </td>
+      <td>Your custom setting of copyright notice:</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">prepend</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> The text prepend to the year.<br /> <em>Default:</em> <code class="language-plaintext blue highlighter-rouge">Copyright © </code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">owner</code></td>
+      <td>The name of the copyright holder.<br /> <em>Default:</em> <em><code class="language-plaintext highlighter-rouge">site.name</code></em>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">link</code></td>
+      <td>The URL to go when clicking on the copyright notice.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">/</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">append</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> The text at the end of the copyright notice.<br /> <em>Default:</em> <code class="language-plaintext blue highlighter-rouge">. All rights reserved.</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Default format:</strong></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+{{ prepend }}{{ CURRENT YEAR }} <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ link }}"</span><span class="nt">&gt;</span>{{ owner }}<span class="nt">&lt;a&gt;</span>{{ append }}
+
+</code></pre></div></div>
+
+<blockquote>
+  <p>Copyright © 2024 <a href="https://chriskyfung.github.io">Chris KY FUNG’s Blog</a>. All rights reserved.</p>
+</blockquote>
+
+<p><strong>Example 1:</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">copyright</span><span class="pi">:</span>
+   <span class="na">prepend</span><span class="pi">:</span> <span class="s2">"</span><span class="s">©</span><span class="nv"> </span><span class="s">2020-"</span>
+   <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Chris</span><span class="nv"> </span><span class="s">KY</span><span class="nv"> </span><span class="s">FUNG"</span>
+   <span class="na">link</span><span class="pi">:</span> <span class="s">https://github.com/chriskyfung/</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>© 2020-2024 <a href="https://github.com/chriskyfung/">Chris KY FUNG</a>. All rights reserved.</p>
+</blockquote>
+
+<p><strong>Example 2:</strong></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">copyright</span><span class="pi">:</span>
+   <span class="na">prepend</span><span class="pi">:</span> <span class="s2">"</span><span class="s">GitHub</span><span class="nv"> </span><span class="s">©"</span>
+   <span class="na">owner</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+   <span class="na">append</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+</code></pre></div></div>
+
+<blockquote>
+  <p>Github © 2024</p>
+</blockquote>
+
+<h3 id="privacy-policy-link">Privacy Policy Link</h3>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Attribute</td>
+      <td>Property</td>
+      <td>Description</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">privacy_policy</code></td>
+      <td><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td><span class="badge badge-success">v2.8.1</span><br /> The URL to go when clicking on the privacy policy link.<br /> <em>Default:</em> <code class="language-plaintext blue highlighter-rouge">/privacy-policy</code>.</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="[&quot;doc&quot;]" /><category term="_config" /><summary type="html"><![CDATA[This documentation provides a comprehensive guide on configuring the footer columns and additional footer options in your theme, ensuring you can effectively customize your site's footer.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/footer-331115.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/footer-331115.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Plugins and Extensions</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/plugins/" rel="alternate" type="text/html" title="Plugins and Extensions" /><published>2021-09-08T04:00:00+00:00</published><updated>2024-01-10T14:23:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/plugins/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#-github-pages-whitelisted-plugins" id="markdown-toc--github-pages-whitelisted-plugins"><i class="fas fa-cubes fa-fw"></i> GitHub Pages’ Whitelisted Plugins</a>    <ul>
+      <li><a href="#-github-metadata" id="markdown-toc--github-metadata"><i class="fab fa-github fa-fw"></i> GitHub Metadata</a></li>
+      <li><a href="#-jekyll-feed" id="markdown-toc--jekyll-feed"><i class="fas fa-rss fa-fw"></i> Jekyll Feed</a></li>
+      <li><a href="#-jekyll-paginate" id="markdown-toc--jekyll-paginate"><i class="fas fa-sort fa-rotate-90 fa-fw"></i> Jekyll Paginate</a></li>
+      <li><a href="#-jekyll-redirect-from" id="markdown-toc--jekyll-redirect-from"><i class="fas fa-directions fa-fw"></i> Jekyll Redirect From</a></li>
+      <li><a href="#-jekyll-relative-links" id="markdown-toc--jekyll-relative-links"><i class="fas fa-anchor fa-fw"></i> Jekyll Relative Links</a></li>
+      <li><a href="#-jekyll-seo-tag" id="markdown-toc--jekyll-seo-tag"><i class="fab fa-searchengin fa-fw"></i> Jekyll SEO Tag</a></li>
+      <li><a href="#-jekyll-sitemap" id="markdown-toc--jekyll-sitemap"><i class="fas fa-sitemap fa-fw"></i> Jekyll sitemap</a></li>
+    </ul>
+  </li>
+  <li><a href="#-suggested-extensions" id="markdown-toc--suggested-extensions"><i class="fas fa-plug fa-fw"></i> Suggested Extensions</a>    <ul>
+      <li><a href="#-jekyll-archives" id="markdown-toc--jekyll-archives"><i class="fas fa-archive"></i> Jekyll Archives</a></li>
+      <li><a href="#-jekyll-loading-lazy-deprecated" id="markdown-toc--jekyll-loading-lazy-deprecated"><i class="fas fa-spinner fa-fw"></i> Jekyll Loading Lazy <sup>(Deprecated)</sup></a></li>
+      <li><a href="#-jekyll-minifier" id="markdown-toc--jekyll-minifier"><i class="fas fa-file-export fa-fw"></i> Jekyll Minifier</a></li>
+      <li><a href="#-jekyll-scholar" id="markdown-toc--jekyll-scholar"><i class="fas fa-graduation-cap fa-fw"></i> Jekyll Scholar</a>        <ul>
+          <li><a href="#use-ieee-citation-style-with-doi-hyperlink" id="markdown-toc-use-ieee-citation-style-with-doi-hyperlink">Use IEEE Citation Style with DOI Hyperlink</a>            <ul>
+              <li><a href="#in-text-example" id="markdown-toc-in-text-example"><strong>In-text example</strong></a></li>
+              <li><a href="#bibliography-example" id="markdown-toc-bibliography-example"><strong>Bibliography example</strong></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<hr />
+
+<h2 id="-github-pages-whitelisted-plugins"><i class="fas fa-cubes fa-fw"></i> GitHub Pages’ Whitelisted Plugins</h2>
+
+<h3 id="-github-metadata"><i class="fab fa-github fa-fw"></i> GitHub Metadata</h3>
+
+<p>A Jekyll plugin to propagate the <code class="language-plaintext highlighter-rouge">site.github</code> namespace with <a href="https://github.com/jekyll/github-metadata/blob/master/docs/site.github.md">repository metadata</a>.</p>
+
+<p>See <a href="https://github.com/jekyll/github-metadata"><strong>github-metadata</strong></a>.</p>
+
+<h3 id="-jekyll-feed"><i class="fas fa-rss fa-fw"></i> Jekyll Feed</h3>
+
+<p>A Jekyll plugin to generate an Atom (RSS-like) feed of your Jekyll posts.</p>
+
+<p>See <a href="https://github.com/jekyll/jekyll-feed"><strong>jekyll-feed</strong></a>.</p>
+
+<h3 id="-jekyll-paginate"><i class="fas fa-sort fa-rotate-90 fa-fw"></i> Jekyll Paginate</h3>
+
+<p>Default pagination generator for Jekyll (See <a href="https://jekyllrb.com/docs/pagination/" title="Official Jekyll Documentation"><strong>Pagination</strong></a>).</p>
+
+<p><strong>Usage</strong>:</p>
+
+<ol>
+  <li><a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/#2021-08-02-config-guide">Setup the pagination</a> for posts on your blog in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</li>
+  <li>
+    <p>Use the following code to render paginated posts and pagination links in an HTML file:</p>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Post Grid --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"masonrygrid row listrecent"</span><span class="nt">&gt;</span>   
+{% for post in paginator.posts %}   
+   {% include blocks/post-box.html %}
+{% endfor %}   
+<span class="nt">&lt;/div&gt;</span> 
+<span class="c">&lt;!-- Pagination --&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"bottompagination"</span><span class="nt">&gt;</span>   
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"navigation"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>  
+   {% include blocks/pagination.html %}      
+<span class="nt">&lt;/span&gt;</span>   
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="-jekyll-redirect-from"><i class="fas fa-directions fa-fw"></i> Jekyll Redirect From</h3>
+
+<p>A Jekyll plugin to allow an author to specify multiple URLs for a page, such that the alternative URLs redirect to the new Jekyll URL.</p>
+
+<p>See <a href="https://github.com/jekyll/jekyll-redirect-from"><strong>jekyll-redirect-from</strong></a>.</p>
+
+<h3 id="-jekyll-relative-links"><i class="fas fa-anchor fa-fw"></i> Jekyll Relative Links</h3>
+
+<p>A Jekyll plugin to convert relative links to Markdown files to their rendered equivalents.</p>
+
+<p>See <a href="https://github.com/benbalter/jekyll-relative-links/"><strong>jekyll-relative-links</strong></a>.</p>
+
+<p><strong>Note</strong>: Recommend to use the <a href="https://jekyllrb.com/docs/liquid/tags/#link"><code class="language-plaintext highlighter-rouge">link</code></a> and <a href="https://jekyllrb.com/docs/liquid/tags/#linking-to-posts"><code class="language-plaintext highlighter-rouge">post_url</code></a> Jekyll tags to instead.</p>
+
+<h3 id="-jekyll-seo-tag"><i class="fab fa-searchengin fa-fw"></i> Jekyll SEO Tag</h3>
+
+<p><a href="https://github.com/jekyll/jekyll-seo-tag"><strong>jekyll-seo-tag</strong></a> is a Jekyll plugin to add metadata tags for search engines and social networks to better index and display your site’s content. It provides rich settings for site-level and on-page SEO.</p>
+
+<p>💡 Also, read the <a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/#seo-configuration">Config Guide</a> and the <a href="/amp-jekyll-theme-with-sirdata-consent/front-matter-guide/#on-page-seo">Front Matter Guide</a> to learn more about the basic usages within this theme and on-page SEO for post metadata, respectively.</p>
+
+<h3 id="-jekyll-sitemap"><i class="fas fa-sitemap fa-fw"></i> Jekyll sitemap</h3>
+
+<p>Default sitemap generator for Jekyll. See <a href="https://github.com/jekyll/jekyll-sitemap"><strong>jekyll-sitemap</strong></a>.</p>
+
+<hr />
+
+<h2 id="-suggested-extensions"><i class="fas fa-plug fa-fw"></i> Suggested Extensions</h2>
+
+<h3 id="-jekyll-archives"><i class="fas fa-archive"></i> Jekyll Archives</h3>
+
+<p>A Jekyll plugin to automatically generate post archives by dates, tags, and categories.</p>
+
+<p>See <a href="https://github.com/jekyll/jekyll-archives"><strong>jekyll-archives</strong></a>.</p>
+
+<p><strong>NOTE</strong>: Jekyll Archives is not a GitHub Pages’ <a href="https://pages.github.com/versions/">whitelisted plugins</a>.</p>
+
+<p>Add the following example to your <code class="language-plaintext highlighter-rouge">_config.yml</code> file will enable category and tag archives:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
+<span class="na">jekyll-archives</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="s">categories</span>
+    <span class="pi">-</span> <span class="s">tags</span>
+  <span class="na">layout</span><span class="pi">:</span> <span class="s">archive</span>
+  <span class="na">permalinks</span><span class="pi">:</span> 
+    <span class="na">category</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/category/:name/'</span>
+    <span class="na">tag</span><span class="pi">:</span> <span class="s1">'</span><span class="s">/tag/:name/'</span>
+</code></pre></div></div>
+
+<h3 id="-jekyll-loading-lazy-deprecated"><i class="fas fa-spinner fa-fw"></i> Jekyll Loading Lazy <sup>(Deprecated)</sup></h3>
+
+<p><a href="https://github.com/gildesmarais/jekyll-loading-lazy"><strong>jekyll-loading-lazy</strong></a> is a Jekyll plugin to load images on your sites lazily without JavaScript by automatically adding <code class="language-plaintext highlighter-rouge">loading="lazy"</code> to <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;iframe&gt;</code> tags.</p>
+
+<p><strong>NOTE</strong>: Jekyll Loading Lazy is not a GitHub Pages’ <a href="https://pages.github.com/versions/">whitelisted plugins</a>.</p>
+
+<p>You don’t need to use this plugin because, in this theme, all AMP elements are always lazy-loaded.</p>
+
+<h3 id="-jekyll-minifier"><i class="fas fa-file-export fa-fw"></i> Jekyll Minifier</h3>
+
+<p>A Jekyll plugin to minifies HTML, XML, CSS, JSON and JavaScript both inline and as separate files.</p>
+
+<p>See <a href="https://github.com/digitalsparky/jekyll-minifier"><strong>jekyll-minifier</strong></a>.</p>
+
+<p><strong>NOTE</strong>: Jekyll Minifier is not a GitHub Pages’ <a href="https://pages.github.com/versions/">whitelisted plugins</a>.</p>
+
+<h3 id="-jekyll-scholar"><i class="fas fa-graduation-cap fa-fw"></i> Jekyll Scholar</h3>
+
+<p>A Jekyll plugin for formatting your citations and bibliographies for your blog posts from BibTeX entities (See <a href="https://github.com/inukshuk/jekyll-scholar"><strong>jekyll-scholar</strong></a>).</p>
+
+<p>Starting from <span class="badge badge-success">v2.1.2-alpha</span>, this theme provides CSS styling for the Jekyll-Scholar generated citation links and a custom bibliography template for rendering DOI hyperlinks.</p>
+
+<p><strong>NOTE</strong>: Jekyll Scholar is not a GitHub Pages’ <a href="https://pages.github.com/versions/">whitelisted plugins</a>.</p>
+
+<p>Follow <a href="https://github.com/inukshuk/jekyll-scholar">Jekyll Scholar’s documentation</a> to install and configure the Jekyll-Scholar settings in your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<h4 id="use-ieee-citation-style-with-doi-hyperlink">Use IEEE Citation Style with DOI Hyperlink</h4>
+
+<p>The <a href="https://ieeeauthorcenter.ieee.org/wp-content/uploads/IEEE-Reference-Guide.pdf">IEEE citation style</a> is the standard referencing format set by The <a href="https://www.ieee.org/">Institute of Electrical and Electronics Engineers</a>. It is widely used in publishing journals, magazines, and conference proceedings for engineering, computer science, and information technology industries.</p>
+
+<p>The <a href="https://apastyle.apa.org/style-grammar-guidelines/references/dois-urls">Digital Object Identifier (DOI)</a> is a persistent identifier assigned by the International DOI Foundation to identify content on the internet. It is useful for readers to find academic, professional, and government information, such as journal articles, research reports, data sets, and official publications that are available online.</p>
+
+<p>By default, the Jekyll Scholar renders DOIs as plain text inside bibliographies. But you can change it to hyperlinks by using the following configuration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
+<span class="na">scholar</span><span class="pi">:</span>
+  <span class="na">style</span><span class="pi">:</span> <span class="s1">'</span><span class="s">_bibliography/ieee-without-doi-and-index.csl'</span>
+  <span class="na">bibliography_template</span><span class="pi">:</span> <span class="s">bib</span>
+</code></pre></div></div>
+
+<ul>
+  <li>
+    <h5 id="in-text-example"><strong>In-text example</strong></h5>
+
+    <p><code class="language-plaintext highlighter-rouge">You can build a website using GitHub Pages {% cite Utomo_2020 %}</code></p>
+
+    <p><strong>Output</strong>:</p>
+
+    <p><samp>You can build a website using GitHub Pages <a class="citation" href="#Utomo_2020">[1]</a>.</samp></p>
+  </li>
+  <li>
+    <h5 id="bibliography-example"><strong>Bibliography example</strong></h5>
+
+    <p><code class="language-plaintext highlighter-rouge">{% bibliography --cited %}</code></p>
+
+    <p><strong>Output</strong>:</p>
+
+    <p><samp>
+    <ol class="bibliography">
+    <li>
+    <span id="Utomo_2020">P. Utomo and Falahah, “Building Serverless Website on GitHub Pages,” <i>IOP Conference Series: Materials Science and Engineering</i>, vol. 879, p. 012077, Aug. 2020,</span> doi: <a data-vars-event-label="https://doi.org/10.1088/1757-899x/879/1/012077" href="https://doi.org/10.1088/1757-899x/879/1/012077">10.1088/1757-899x/879/1/012077</a>.
+    </li>
+    </ol>
+    </samp>
+ </p>
+  </li>
+</ul>]]></content><author><name></name></author><category term="[&quot;doc&quot;]" /><category term="plugin" /><category term="_config" /><summary type="html"><![CDATA[List of Jekyll plugins being used and/or supported by this AMP Jekyll theme]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/puzzle-3311601.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/puzzle-3311601.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Config Guide</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/config-guide/" rel="alternate" type="text/html" title="Config Guide" /><published>2021-08-23T16:01:00+00:00</published><updated>2024-11-21T12:24:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/config-guide</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/config-guide/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#-use-amp-affiliately-theme-as-remote-theme" id="markdown-toc--use-amp-affiliately-theme-as-remote-theme"><i class="fas fa-puzzle-piece fa-fw"></i> Use Amp Affiliately Theme As Remote Theme</a></li>
+  <li><a href="#-global-configuration" id="markdown-toc--global-configuration"><i class="fas fa-cogs fa-fw"></i> Global Configuration</a></li>
+  <li><a href="#-theme-configuration" id="markdown-toc--theme-configuration"><i class="fas fa-paint-roller fa-fw"></i> Theme Configuration</a>    <ul>
+      <li><a href="#navigation-bar-settings" id="markdown-toc-navigation-bar-settings">Navigation Bar Settings</a>        <ul>
+          <li><a href="#settings-for-menu-buttons-v27" id="markdown-toc-settings-for-menu-buttons-v27">Settings for Menu Buttons <span class="badge badge-success">v2.7</span></a></li>
+          <li><a href="#settings-for-global-menu-items" id="markdown-toc-settings-for-global-menu-items">Settings for Global Menu Items</a></li>
+          <li><a href="#settings-for-local-menu-items" id="markdown-toc-settings-for-local-menu-items">Settings for Local Menu Items</a></li>
+        </ul>
+      </li>
+      <li><a href="#list-sorting-options-v23" id="markdown-toc-list-sorting-options-v23">List Sorting Options <span class="badge badge-success">v2.3</span></a></li>
+      <li><a href="#post-processing-options-v20" id="markdown-toc-post-processing-options-v20">Post-Processing Options <span class="badge badge-success">v2.0</span></a>        <ul>
+          <li><a href="#-add-anchor-link-for-h2-h3-and-h4-headings" id="markdown-toc--add-anchor-link-for-h2-h3-and-h4-headings"><i class="fas fa-link fa-fw"></i> Add Anchor Link For H2, H3 And H4 Headings</a></li>
+          <li><a href="#-modify-external-links-to-open-in-new-tab" id="markdown-toc--modify-external-links-to-open-in-new-tab"><i class="fas fa-door-open fa-fw"></i> Modify External Links To Open In New Tab</a></li>
+        </ul>
+      </li>
+      <li><a href="#sidebar-options" id="markdown-toc-sidebar-options">Sidebar Options</a>        <ul>
+          <li><a href="#-site-wide-display-featured-and-recent-posts-sidebar-widgets-v16" id="markdown-toc--site-wide-display-featured-and-recent-posts-sidebar-widgets-v16"><i class="fas fa-layer-group fa-fw"></i> Site-Wide Display Featured And Recent Posts Sidebar Widgets <span class="badge badge-success">v1.6</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#social-buttons" id="markdown-toc-social-buttons">Social Buttons</a>        <ul>
+          <li><a href="#v14-deprecated" id="markdown-toc-v14-deprecated"><span class="badge badge-default">v1.4</span> <sup>Deprecated</sup></a></li>
+          <li><a href="#v27" id="markdown-toc-v27"><span class="badge badge-success">v2.7</span></a></li>
+        </ul>
+      </li>
+      <li><a href="#footer-options" id="markdown-toc-footer-options">Footer Options</a></li>
+      <li><a href="#cookie-consent-v29" id="markdown-toc-cookie-consent-v29">Cookie Consent <span class="badge badge-success">v2.9</span></a></li>
+      <li><a href="#seo-configuration" id="markdown-toc-seo-configuration">SEO Configuration</a></li>
+      <li><a href="#options-for-third-party-components" id="markdown-toc-options-for-third-party-components">Options For Third-Party Components</a>        <ul>
+          <li><a href="#-google-services" id="markdown-toc--google-services"><i class="fab fa-google fa-fw"></i> Google Services</a>            <ul>
+              <li><a href="#-google-analytics" id="markdown-toc--google-analytics"><i class="far fa-chart-bar fa-fw"></i> Google Analytics</a></li>
+              <li><a href="#-google-custom-search-engine-cse" id="markdown-toc--google-custom-search-engine-cse"><i class="fab fa-searchengin fa-fw"></i> Google Custom Search Engine (CSE)</a></li>
+              <li><a href="#-google-adsense" id="markdown-toc--google-adsense"><i class="fas fa-ad fa-fw"></i> Google Adsense</a></li>
+              <li><a href="#-google-tag-manager-gtm" id="markdown-toc--google-tag-manager-gtm"><i class="fas fa-expand fa-fw" style="transform: rotate(45deg)"></i> Google Tag Manager (GTM)</a></li>
+            </ul>
+          </li>
+          <li><a href="#-github" id="markdown-toc--github"><i class="fab fa-github fa-fw"></i> GitHub</a></li>
+          <li><a href="#-show-github-metadata-widget-in-sidebar-v12" id="markdown-toc--show-github-metadata-widget-in-sidebar-v12"><i class="fab fa-github-square fa-fw"></i> Show Github Metadata Widget in Sidebar <span class="badge badge-success">v1.2</span></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<hr />
+
+<h2 id="-use-amp-affiliately-theme-as-remote-theme"><i class="fas fa-puzzle-piece fa-fw"></i> Use Amp Affiliately Theme As Remote Theme</h2>
+
+<ol>
+  <li>
+    <p>Add <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> as an array-value of the key <code class="language-plaintext highlighter-rouge">plugins</code> in your site’s <code class="language-plaintext highlighter-rouge">_config.yml</code> file, like this:</p>
+
+    <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">plugins</span><span class="pi">:</span>
+   <span class="pi">-</span> <span class="s">jekyll-remote-theme</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Add <code class="language-plaintext highlighter-rouge">gem "jekyll-remote-theme"</code> to the Bundler group your <strong>Gemfile</strong>, like this:</p>
+
+    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
+   <span class="n">gem</span> <span class="s2">"jekyll-remote-theme"</span>
+   <span class="n">gem</span> <span class="s2">"another-jekyll-plugin"</span>
+<span class="k">end</span>
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Run <code class="language-plaintext highlighter-rouge">bundle install</code> to install the plugin before building your site locally.</p>
+  </li>
+  <li>
+    <p>Add <code class="language-plaintext highlighter-rouge">remote_theme: chriskyfung/amp-affiliately-jekyll-theme</code> to your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+  </li>
+  <li>
+    <p>Add Theme Configuration to your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+  </li>
+</ol>
+
+<p><strong>Note</strong>: You must update the <code class="language-plaintext highlighter-rouge">jekyll-remote-theme</code> plugin to <code class="language-plaintext highlighter-rouge">v0.4.2</code> or higher if you use <strong>Jekyll 4.0+</strong>.</p>
+
+<p>You may also optionally specify a branch, tag, or commit to using by appending an <code class="language-plaintext highlighter-rouge">@</code> and the Git ref (e.g., <code class="language-plaintext highlighter-rouge">chriskyfung/amp-affiliately-jekyll-theme@v1.2.8</code>). If you don’t specify a Git ref, the master branch will be used.</p>
+
+<hr />
+
+<h2 id="-global-configuration"><i class="fas fa-cogs fa-fw"></i> Global Configuration</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">permalink</code></td>
+      <td><code class="language-plaintext highlighter-rouge">/:year/:month/:day/:title</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">timezone</code></td>
+      <td>Any entry from the <a href="https://en.wikipedia.org/wiki/Tz_database" title="Wikipedia">IANA Time Zone Database</a> is valid, e.g. America/New_York. A list of all available values can be found <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones" title="Wikipedia">here</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">paginate</code></td>
+      <td>(<em>Optional</em>) The maximum number of posts you’d like to be displayed per-page in the generated site, e.g. <code class="language-plaintext highlighter-rouge">10</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">paginate_path</code></td>
+      <td>(<em>Optional</em>) The destination of the <a href="https://jekyllrb.com/docs/pagination/" title="Official Jekyll Documentation">pagination</a> pages.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>💡 Learn More:</strong></p>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/configuration/options/" title="Offical Jekyll Documentation">Configuration Options | Jekyllrb</a></li>
+  <li><a href="https://jekyllrb.com/docs/configuration/default/" title="Offical Jekyll Documentation">Default Configuration | Jekyllrb</a></li>
+  <li><a href="/amp-jekyll-theme-with-sirdata-consent/plugins/#-jekyll-paginate">Render Paginated Posts</a></li>
+</ul>
+
+<hr />
+
+<h2 id="-theme-configuration"><i class="fas fa-paint-roller fa-fw"></i> Theme Configuration</h2>
+
+<p>You should include the following in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file to set up the theme.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">title</code></td>
+      <td>Your site’s title. Also, used as the text of the first menu item if <em><code class="language-plaintext highlighter-rouge">repostory</code></em> is configured in the <code class="language-plaintext highlighter-rouge">_config.yml</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">url</code></td>
+      <td>The web address of your site including the protocol, subdomain, and domain name, e.g. <code class="language-plaintext highlighter-rouge">https://yourdomain.com</code> or <code class="language-plaintext highlighter-rouge">https://www.yourdomain.com</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">baseurl</code></td>
+      <td>The first route parameter after your domain name in the URL, e.g. <code class="language-plaintext highlighter-rouge">''</code> if the site is deployed to <code class="language-plaintext highlighter-rouge">www.yourdomain.com</code> and <code class="language-plaintext highlighter-rouge">/repo-1</code> if the root is <code class="language-plaintext highlighter-rouge">www.yourdomain.com/repo-1/</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">favicon</code></td>
+      <td>The path to the <a href="https://stackoverflow.com/questions/4888377/how-to-add-a-browser-tab-icon-favicon-for-a-website">favicon</a> file</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">logo</code></td>
+      <td>The path to the (JPG/PNG/SVG) image that will be displayed on the navigation bar. The URL will also be included to JSON-LD structured data by <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md" title="GitHub">Jekyll SEO Tag</a>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">name</code></td>
+      <td>Your site’s name used as the alt text of your logo image. Also, displayed in the copyright notice, if <em><code class="language-plaintext highlighter-rouge">copyright.owner</code></em> is not configured in the <code class="language-plaintext highlighter-rouge">_config.yml</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note</strong>: Regarding to <code class="language-plaintext highlighter-rouge">title</code> and <code class="language-plaintext highlighter-rouge">url</code>, please alse read the documentation of <a href="https://github.com/jekyll/jekyll-feed" title="GitHub">Jekyll Feed</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md" title="GitHub">Jekyll SEO Tag</a>.</p>
+
+<hr />
+
+<h3 id="navigation-bar-settings">Navigation Bar Settings</h3>
+
+<p>You will need to configure the navigation bar for this theme in the following hierarchy:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">nav</span><span class="pi">:</span>
+   <span class="na">buttons</span><span class="pi">:</span>
+      <span class="s">...</span> <span class="c1"># Settings for menu buttons</span>
+      <span class="s">...</span>
+   <span class="na">global</span><span class="pi">:</span>
+      <span class="s">...</span> <span class="c1"># Settings for global/domain-Level menu items</span>
+      <span class="s">...</span>
+   <span class="na">local</span><span class="pi">:</span>
+      <span class="s">...</span> <span class="c1"># Settings for local/baseURL-level menu items</span>
+      <span class="s">...</span>
+</code></pre></div></div>
+
+<h4 id="settings-for-menu-buttons-v27">Settings for Menu Buttons <span class="badge badge-success">v2.7</span></h4>
+
+<p>Use the following option to configure the menu buttons.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">buttons</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">gh_sponsors</code></td>
+      <td><span class="badge badge-success">v2.7</span><br /> Set <code class="language-plaintext highlighter-rouge">true</code> to show <strong>GitHub Sponsors</strong> button in the navigation bar, if <code class="language-plaintext highlighter-rouge">social.github</code> is also configured in in the <code class="language-plaintext highlighter-rouge">_config.yml</code>.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Example:</strong></p>
+
+<div class="github-sponsors-button">
+   <a class="gh-style btn btn-block" style="margin: 2px 0" aria-label="Sponsor @chriskyfung" target="_top" href="https://github.com/sponsors/chriskyfung?o=esb">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-heart icon-sponsor color-fg-sponsors">
+        <path fill-rule="evenodd" d="M4.25 2.5c-1.336 0-2.75 1.164-2.75 3 0 2.15 1.58 4.144 3.365 5.682A20.565 20.565 0 008 13.393a20.561 20.561 0 003.135-2.211C12.92 9.644 14.5 7.65 14.5 5.5c0-1.836-1.414-3-2.75-3-1.373 0-2.609.986-3.029 2.456a.75.75 0 01-1.442 0C6.859 3.486 5.623 2.5 4.25 2.5zM8 14.25l-.345.666-.002-.001-.006-.003-.018-.01a7.643 7.643 0 01-.31-.17 22.075 22.075 0 01-3.434-2.414C2.045 10.731 0 8.35 0 5.5 0 2.836 2.086 1 4.25 1 5.797 1 7.153 1.802 8 3.02 8.847 1.802 10.203 1 11.75 1 13.914 1 16 2.836 16 5.5c0 2.85-2.045 5.231-3.885 6.818a22.08 22.08 0 01-3.744 2.584l-.018.01-.006.003h-.002L8 14.25zm0 0l.345.666a.752.752 0 01-.69 0L8 14.25z"></path>
+      </svg>
+      <span>Sponsor</span>
+   </a>
+</div>
+
+<h4 id="settings-for-global-menu-items">Settings for Global Menu Items</h4>
+
+<p>GitHub Pages allows you to deploy your multiple project pages under the same domain with different base URLs. In case, you may want to a menu item for back to the domain-level homepage and/or some principal menu items sharing across the sites for consistency.
+The following options provide the granular control to those menu items:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">global</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">home</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> Set <code class="language-plaintext highlighter-rouge">false</code> to disable rendering <strong>HOME</strong> menu item in the navigation menu.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">menu</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> Set <code class="language-plaintext green highlighter-rouge">true</code> to include menu items from <code class="language-plaintext highlighter-rouge">global-menu.html</code> for your entire site/domain.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">dropdown</code></td>
+      <td><span class="badge badge-success">v1.7.2</span><br /> Set <code class="language-plaintext highlighter-rouge">false</code> to exclude global dropdown menus from the global menu.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>When <code class="language-plaintext highlighter-rouge">home</code> is not set to <code class="language-plaintext highlighter-rouge">false</code>, the following extra settings will be available and become effective:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th style="text-align: center">Property</th>
+      <th>Key</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">global</code></td>
+      <td style="text-align: center"><code class="language-plaintext highlighter-rouge">home</code></td>
+      <td> </td>
+      <td><span class="badge badge-success">v2.0</span></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td style="text-align: center"> </td>
+      <td><code class="language-plaintext highlighter-rouge">location</code></td>
+      <td>The location of <strong>HOME</strong> button in the navigation menu.<br /> <em>Options:</em> <code class="language-plaintext highlighter-rouge">menu-start</code> or <code class="language-plaintext highlighter-rouge">menu-end</code>.<br /> <em>Default:</em> <code class="language-plaintext blue highlighter-rouge">menu-start</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td style="text-align: center"> </td>
+      <td><code class="language-plaintext highlighter-rouge">text</code></td>
+      <td>The text to display on the home menu item.<br /> <em>Default:</em> <code class="language-plaintext blue highlighter-rouge">Home</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="settings-for-local-menu-items">Settings for Local Menu Items</h4>
+
+<p>Use the following options to configure the menu items that will be shown on the webpages under the same base URL.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">local</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">max_title_length</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> The maximun number of characters to display <em><code class="language-plaintext highlighter-rouge">site.title</code></em> in the navigation bar.<br /> <em>Default</em>: <code class="language-plaintext blue highlighter-rouge">40</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">items</code></td>
+      <td><span class="badge badge-success">v1.7.2</span><br /> An array of simple menu items that consists of the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">url</code> key-value pairs.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">menu</code></td>
+      <td><span class="badge badge-success">v1.7.2</span><br /> Set <code class="language-plaintext green highlighter-rouge">true</code> to include menu items from <code class="language-plaintext highlighter-rouge">local-menu.html</code>.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For example,</p>
+
+<div class="language-yml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">nav</span><span class="pi">:</span>
+  <span class="na">local</span><span class="pi">:</span>
+    <span class="na">items</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Page </span><span class="m">1</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">/page-1.html</span>
+      <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Page </span><span class="m">2</span>
+         <span class="na">url</span><span class="pi">:</span> <span class="s">page-2.html</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="list-sorting-options-v23">List Sorting Options <span class="badge badge-success">v2.3</span></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">sort_categories</code></td>
+      <td>Set <code class="language-plaintext highlighter-rouge">false</code> to disable sorting the items of post’s categories.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">sort_tags</code></td>
+      <td>Set <code class="language-plaintext highlighter-rouge">false</code> to disable sorting the items of post’s tags.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="post-processing-options-v20">Post-Processing Options <span class="badge badge-success">v2.0</span></h3>
+
+<h4 id="-add-anchor-link-for-h2-h3-and-h4-headings"><i class="fas fa-link fa-fw"></i> Add Anchor Link For H2, H3 And H4 Headings</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">anchor_link</code></td>
+      <td>Set <code class="language-plaintext green highlighter-rouge">true</code> to attach an anchor link to H2-H4 elements inside posts’ content similar to <a href="https://www.bryanbraun.com/anchorjs/">AnchorJS</a> (<a href="/amp-jekyll-theme-with-sirdata-consent/post-processing/#add-anchor-link-to-h2-h3-and-h4-headings-v20">View Demo</a>).<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="-modify-external-links-to-open-in-new-tab"><i class="fas fa-door-open fa-fw"></i> Modify External Links To Open In New Tab</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">target_blank</code></td>
+      <td>Set <code class="language-plaintext green highlighter-rouge">true</code> to insert <code class="language-plaintext highlighter-rouge">rel="noopener noreferrer"</code> and <code class="language-plaintext highlighter-rouge">target="_blank"</code> to each <code class="language-plaintext highlighter-rouge">&lt;a&gt;</code> element that links to an <a href="/amp-jekyll-theme-with-sirdata-consent/post-processing/#set-external-links-to-open-in-a-new-tab-v20">outbound URL</a> <i class="fas fa-external-link-alt"></i> inside posts’ content.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="sidebar-options">Sidebar Options</h3>
+
+<h4 id="-site-wide-display-featured-and-recent-posts-sidebar-widgets-v16"><i class="fas fa-layer-group fa-fw"></i> Site-Wide Display Featured And Recent Posts Sidebar Widgets <span class="badge badge-success">v1.6</span></h4>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">sidebar</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">featured</code></td>
+      <td>Add <strong>FEATURED</strong> widget to sidebar.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">recent_posts</code></td>
+      <td>Add <strong>RECENT POSTS</strong> widget to sidebar.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Set <code class="language-plaintext highlighter-rouge">false</code> to disable the widgets as you need</li>
+</ul>
+
+<hr />
+
+<h3 id="social-buttons">Social Buttons</h3>
+
+<p>You can configure the links for social buttons by the following attributes.</p>
+
+<h4 id="v14-deprecated"><span class="badge badge-default">v1.4</span> <sup>Deprecated</sup></h4>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Soical Buttons</span>
+<span class="na">facebook_id</span><span class="pi">:</span> <span class="s">your_facebook_username</span>
+<span class="na">pinterest_id</span><span class="pi">:</span> <span class="s">your_pinterest_username</span>
+<span class="na">github_id </span><span class="pi">:</span> <span class="s">your_github_username</span>
+<span class="na">medium_id</span><span class="pi">:</span> <span class="s">your_medium_username</span>
+</code></pre></div></div>
+
+<h4 id="v27"><span class="badge badge-success">v2.7</span></h4>
+
+<p>The social button will only show if the corresponding attribute is configured.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Soical Buttons</span>
+<span class="na">social</span><span class="pi">:</span>
+   <span class="na">facebook</span><span class="pi">:</span> <span class="s">your_facebook_username</span>
+   <span class="na">twitter</span><span class="pi">:</span> <span class="s">your_twitter_username</span>
+   <span class="na">linkedin</span><span class="pi">:</span> <span class="s">your_linkedin_username</span>
+   <span class="na">pinterest</span><span class="pi">:</span> <span class="s">your_pinerest_username</span>
+   <span class="na">github </span><span class="pi">:</span> <span class="s">your_github_username</span>
+   <span class="na">medium</span><span class="pi">:</span> <span class="s">your_medium_username</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="footer-options">Footer Options</h3>
+
+<p>For detailed instructions on how to customize your site’s footer, visit our <a href="../footer-configuration/">Footer Configuration</a> page. This guide explains how to personalize the second and third footer columns by setting titles and link lists in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. It also provides information on configuring other footer options like copyright notices and privacy policy links.</p>
+
+<p>By following this guide, you can significantly enhance your site’s navigation and usability, ensuring that important information is easily accessible to your visitors. Improving your site’s footer not only boosts the overall user experience but also contributes to a more professional and polished appearance. Check out the <a href="../footer-configuration/">Footer Configuration</a> page to make the most of these features.</p>
+
+<hr />
+
+<h3 id="cookie-consent-v29">Cookie Consent <span class="badge badge-success">v2.9</span></h3>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">consent</code></td>
+      <td>Set <code class="language-plaintext green highlighter-rouge">true</code> to enable the cookie consent UI.<br /> <em>Default:</em> <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">consent_dev_mode</code></td>
+      <td>Set <code class="language-plaintext highlighter-rouge">false</code> to remove the <code class="language-plaintext highlighter-rouge">data-ampdevmode</code> attribute from the custom script.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">amp_optimizer</code></td>
+      <td> </td>
+      <td><span class="badge badge-success">v2.9.1</span><br /> Set <code class="language-plaintext green highlighter-rouge">true</code> if you run AMP Optimizer after building the Jekyll site.<br /> <em>Default</em>: <code class="language-plaintext highlighter-rouge">false</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">script_hash</code></td>
+      <td> </td>
+      <td><span class="badge badge-success">v2.9.1</span></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">consent_gsc</code></td>
+      <td>The hash for the <code class="language-plaintext highlighter-rouge">get_stored_consentStates</code> script.<br /> 💡 <a href="https://amp.dev/documentation/components/amp-script#calculating-the-script-hash" title="Documentation: &lt;amp-script&gt; - amp.dev">Calculating the script hash</a>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h3 id="seo-configuration">SEO Configuration</h3>
+
+<p><strong>AMP Affiliately Theme</strong> uses <a href="https://github.com/jekyll/jekyll-seo-tag">Jekyll SEO Tag</a> to output machine-readable metadata for search engines and social networks to index and display. The following is recommended to configure in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td>Global author informaiton</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">description</code></td>
+      <td>A longer description used for the description meta tag</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">locate</code></td>
+      <td>The locale these tags are marked up in. Default is <code class="language-plaintext highlighter-rouge">en_US</code>. Takes priority over existing config key lang</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">tagline</code></td>
+      <td>A short description used as part of the title tag</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>💡 Learn more about the usage of the SEO tag plugin from <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md" title="GitHub">here</a>.</p>
+
+<p><strong>Note</strong>: Regarding to <code class="language-plaintext highlighter-rouge">author</code> and <code class="language-plaintext highlighter-rouge">description</code>, please alse read the documentation of <a href="https://github.com/jekyll/jekyll-feed" title="GitHub">Jekyll Feed</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md" title="GitHub">Jekyll SEO Tag</a>.</p>
+
+<p>Moreover, it is a good idea to set a default image using <a href="https://jekyllrb.com/docs/configuration/front-matter-defaults/">Front Matter defaults</a>,
+provide a default <a href="https://developers.facebook.com/docs/sharing/webmasters/">Open Graph</a> image (<code class="language-plaintext highlighter-rouge">og:image</code>) and <a href="https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/summary-card-with-large-image">Twitter Card</a> image (<code class="language-plaintext highlighter-rouge">twitter:image</code>) to all of your posts and pages.</p>
+
+<p>Here is a basic example from <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#author-information">Jekyll SEO Tag’s Advanced usage</a>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">defaults</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="na">scope</span><span class="pi">:</span>
+      <span class="na">path</span><span class="pi">:</span> <span class="s2">"</span><span class="s">"</span>
+    <span class="na">values</span><span class="pi">:</span>
+      <span class="na">image</span><span class="pi">:</span> <span class="s">/assets/images/default-card.png</span>
+</code></pre></div></div>
+
+<hr />
+
+<h3 id="options-for-third-party-components">Options For Third-Party Components</h3>
+
+<h4 id="-google-services"><i class="fab fa-google fa-fw"></i> Google Services</h4>
+
+<h5 id="-google-analytics"><i class="far fa-chart-bar fa-fw"></i> Google Analytics</h5>
+
+<p>Google Analytics 4 (GA4) provides robust tracking capabilities to help you understand user interactions on your site. The following attributes and configurations are essential for effectively implementing GA4 with AMP:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">ga4</code></td>
+      <td><span class="badge badge-success">v2.6.1</span><br /> Your (<code class="language-plaintext highlighter-rouge">G-</code> ) Measurement ID 💡. <a href="https://support.google.com/analytics/answer/12270356" title="GA4 Measurement ID - Analytics Help">Find your GA4 Measurement ID</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For more information about the use of GA4 in this theme, please refer to our <a href="/amp-jekyll-theme-with-sirdata-consent/google-analytics-4/">Google Analytics 4 for AMP Features</a> page.</p>
+
+<h5 id="-google-custom-search-engine-cse"><i class="fab fa-searchengin fa-fw"></i> Google Custom Search Engine (CSE)</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">cse_id</code></td>
+      <td>Your Search Engine ID 💡 <a href="https://support.google.com/programmable-search/answer/12499034" title="Search engine ID - Programmable Search Engine Help">Find your Google CSE ID</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li><strong>Note:</strong> Essential to feature the site’s search function</li>
+</ul>
+
+<h5 id="-google-adsense"><i class="fas fa-ad fa-fw"></i> Google Adsense</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">adsense</code></td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">client_id</code></td>
+      <td>Your Google Adsense client ID, which starts with <code class="language-plaintext highlighter-rouge">ca-pub-</code></td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">auto_ads</code></td>
+      <td>Set <code class="language-plaintext highlighter-rouge">false</code> to disable <a href="https://support.google.com/adsense/answer/9261805">Auto ads</a> in Adsense<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"> </td>
+      <td><code class="language-plaintext highlighter-rouge">ad_slot</code></td>
+      <td><code class="language-plaintext highlighter-rouge">before_content</code> - Slot ID of ad unit that places before content<br /> <code class="language-plaintext highlighter-rouge">sidebar</code> - Slot ID of ad unit that places to sidebar</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">adstyle</code></td>
+      <td> </td>
+      <td>Set <code class="language-plaintext highlighter-rouge">false</code> to not apply custom styles to indicate empty Ad containers.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>💡 Read the <a href="/amp-jekyll-theme-with-sirdata-consent/ads-settings/">Ads Settings</a> documentation</p>
+
+<h5 id="-google-tag-manager-gtm"><i class="fas fa-expand fa-fw" style="transform: rotate(45deg)"></i> Google Tag Manager (GTM)</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">gtm</code></td>
+      <td>Your GTM AMP container ID</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr />
+
+<h4 id="-github"><i class="fab fa-github fa-fw"></i> GitHub</h4>
+
+<h4 id="-show-github-metadata-widget-in-sidebar-v12"><i class="fab fa-github-square fa-fw"></i> Show Github Metadata Widget in Sidebar <span class="badge badge-success">v1.2</span></h4>
+
+<p>This theme supports rendering GitHub Metadata by using the <a href="https://github.com/jekyll/github-metadata">jekyll-github-metadata</a> plugin. When you associate it with a GitHUb project repo, a sidebar widget named <strong>RESOURCES</strong> with a button link to the GitHub repository will be shown on the page.</p>
+
+<p>You have to declare the repository name in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file, like this:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">Repository</code></td>
+      <td><span class="badge badge-success">v1.2</span><br /> Declare The Repository Name in the <code class="language-plaintext highlighter-rouge">&lt;Username&gt;/&lt;Project&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><code class="language-plaintext highlighter-rouge">resources_widget</code></td>
+      <td><span class="badge badge-success">v2.0</span><br /> Enable side-widely display <strong>Resourece</strong> widget in sidebar.<br /> <em>Default:</em> <code class="language-plaintext green highlighter-rouge">true</code>.</td>
+    </tr>
+  </tbody>
+</table>]]></content><author><name></name></author><category term="[&quot;doc&quot;]" /><category term="_config" /><summary type="html"><![CDATA[The docs for the theme settings that let you control the global styling like logo, navigation, sidebar, footer, pagnitation, etc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/settings-3311592.svg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/settings-3311592.svg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Post-Processing</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/post-processing/" rel="alternate" type="text/html" title="Post-Processing" /><published>2021-08-15T15:15:00+00:00</published><updated>2021-08-22T01:41:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/postprocessing</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/post-processing/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#add-anchor-link-to-h2-h3-and-h4-headings-v20" id="markdown-toc-add-anchor-link-to-h2-h3-and-h4-headings-v20">Add Anchor Link to H2, H3 And H4 Headings <span class="badge badge-success">v2.0</span></a>    <ul>
+      <li><a href="#examples" id="markdown-toc-examples">Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#set-external-links-to-open-in-a-new-tab-v20" id="markdown-toc-set-external-links-to-open-in-a-new-tab-v20">Set External Links to Open in a New Tab <span class="badge badge-success">v2.0</span></a>    <ul>
+      <li><a href="#examples-1" id="markdown-toc-examples-1">Examples</a></li>
+    </ul>
+  </li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<h2 id="add-anchor-link-to-h2-h3-and-h4-headings-v20">Add Anchor Link to H2, H3 And H4 Headings <span class="badge badge-success">v2.0</span></h2>
+
+<p>This theme enables to attach an anchor link to <strong>H2</strong>-<strong>H4</strong> elements inside posts’ content similar to <a href="https://www.bryanbraun.com/anchorjs/">AnchorJS</a> with no dependencies. See the <a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/#-add-anchor-link-for-h2-h3-and-h4-headings">Config Guide</a> if you perfer to disable this feature in your site.</p>
+
+<h3 id="examples">Examples</h3>
+
+<section class="card card-block">
+
+<h2 id="h2-heading">H2 Heading</h2>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h3 id="h3-heading">H3 Heading</h3>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 id="h4-heading">H4 Heading</h4>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h5 id="h5-heading-no-anchor">H5 Heading (<em>no anchor</em>)</h5>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h6 id="h6-heading-no-anchor">H6 Heading (<em>no anchor</em>)</h6>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+</section>
+
+<h2 id="set-external-links-to-open-in-a-new-tab-v20">Set External Links to Open in a New Tab <span class="badge badge-success">v2.0</span></h2>
+
+<p>Starting from version <span class="badge badge-success">v2.0</span>, this theme has replaced the non-whitelist <code class="language-plaintext highlighter-rouge">jekyll-target-blank.rb</code> plugin with pure Liquid templating language to modify links. This change ensures compliance with AMP standards and enhances compatibility.</p>
+
+<p>To enable this feature, configure your site settings as described in the <a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/#-modify-external-links-to-open-in-new-tab">Config Guide</a>. Ensure the <code class="language-plaintext highlighter-rouge">target_blank</code> configuration is set to <code class="language-plaintext highlighter-rouge">true</code>.</p>
+
+<p>When enabled, the theme adds <code class="language-plaintext highlighter-rouge">target="_blank"</code> and <code class="language-plaintext highlighter-rouge">rel="noopener noreferrer"</code> to all external links. These attributes ensure that links open in a new tab and enhance security by preventing potential security risks associated with <code class="language-plaintext highlighter-rouge">target="_blank"</code>.</p>
+
+<p>By configuring your external links to open in a new tab, you can improve user experience by maintaining the context of your site while allowing users to explore additional resources.</p>
+
+<h3 id="examples-1">Examples</h3>
+
+<section class="card card-block">
+
+<h4 id="regular-text-link">regular text link</h4>
+
+<p><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme">external link</a></p>
+
+<h4 id="bold"><strong>bold</strong></h4>
+
+<p><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme"><strong>external link</strong></a></p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 id="code"><code class="language-plaintext highlighter-rouge">code</code></h4>
+
+<p><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme"><code class="language-plaintext highlighter-rouge">external link</code></a></p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 id="italic"><em>italic</em></h4>
+
+<p><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme"><em>external link</em></a></p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 id="bold-and-italic"><em><strong>bold and italic</strong></em></h4>
+
+<p><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme"><em><strong>external link</strong></em></a></p>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+<h4 id="image-in-amp">Image in AMP</h4>
+
+<figure><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme"><amp-img width="96" height="96" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/favicon_96x96.webp" alt="Image in Post-Processing">
+        <amp-img fallback="" width="96" height="96" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/favicon_96x96.png" alt="Image in Post-Processing"></amp-img>
+      </amp-img></a></figure>
+
+
+</section>]]></content><author><name></name></author><category term="[&quot;feature&quot;]" /><category term="styles" /><category term="demo" /><summary type="html"><![CDATA[The demo and test page of the Anchor Links for headings and the Link Modifier on various Markdown styles.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/processing_o128.png" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/processing_o128.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Front Matter Guide</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/front-matter-guide/" rel="alternate" type="text/html" title="Front Matter Guide" /><published>2021-07-31T04:05:00+00:00</published><updated>2022-02-10T14:02:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/front-matter-guide/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#general-front-matters-for-a-post" id="markdown-toc-general-front-matters-for-a-post">General Front Matters for A Post</a></li>
+  <li><a href="#set-featured-image" id="markdown-toc-set-featured-image">Set Featured Image</a>    <ul>
+      <li><a href="#hide-featured-image-on-a-post" id="markdown-toc-hide-featured-image-on-a-post">Hide Featured Image on A Post</a></li>
+      <li><a href="#remove-box-shadow-from-featured-image" id="markdown-toc-remove-box-shadow-from-featured-image">Remove Box Shadow from Featured Image</a></li>
+      <li><a href="#featured-images-that-do-not-have-an-aspect-ratio-of-169" id="markdown-toc-featured-images-that-do-not-have-an-aspect-ratio-of-169">Featured Images That Do Not Have an Aspect Ratio of 16:9</a></li>
+      <li><a href="#show-thumbnail-image-in-sidebar-widgets" id="markdown-toc-show-thumbnail-image-in-sidebar-widgets">Show Thumbnail Image in Sidebar Widgets</a></li>
+    </ul>
+  </li>
+  <li><a href="#pin-featured-posts" id="markdown-toc-pin-featured-posts">Pin Featured Posts</a></li>
+  <li><a href="#add-custom-css-to-html-head-section" id="markdown-toc-add-custom-css-to-html-head-section">Add Custom CSS to HTML &lt;head&gt; Section</a></li>
+  <li><a href="#add-custom-codes-to-html-head-section" id="markdown-toc-add-custom-codes-to-html-head-section">Add Custom Codes to HTML &lt;head&gt; Section</a></li>
+  <li><a href="#sidebar-options" id="markdown-toc-sidebar-options">Sidebar Options</a>    <ul>
+      <li><a href="#override-default-sidebar-setting-v20" id="markdown-toc-override-default-sidebar-setting-v20">Override Default Sidebar Setting <span class="badge badge-success">v2.0</span></a></li>
+      <li><a href="#options-for-resources-widget" id="markdown-toc-options-for-resources-widget">Options for Resources Widget</a>        <ul>
+          <li><a href="#display-github-metadata-for-project-repo" id="markdown-toc-display-github-metadata-for-project-repo">Display GitHub Metadata for Project Repo</a>            <ul>
+              <li><a href="#v12-deprecated" id="markdown-toc-v12-deprecated"><span class="badge badge-default">v1.2</span> <sup>(Deprecated)</sup></a></li>
+              <li><a href="#v20" id="markdown-toc-v20"><span class="badge badge-success">v2.0</span></a></li>
+            </ul>
+          </li>
+          <li><a href="#display-download-buttons" id="markdown-toc-display-download-buttons">Display Download Buttons</a>            <ul>
+              <li><a href="#v12-deprecated-1" id="markdown-toc-v12-deprecated-1"><span class="badge badge-default">v1.2</span> <sup>(Deprecated)</sup></a></li>
+              <li><a href="#v20-1" id="markdown-toc-v20-1"><span class="badge badge-success">v2.0</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#on-page-seo" id="markdown-toc-on-page-seo">On-Page SEO</a></li>
+  <li><a href="#set-url-redirects" id="markdown-toc-set-url-redirects">Set URL Redirects</a></li>
+  <li><a href="#exclude-from-sitemap" id="markdown-toc-exclude-from-sitemap">Exclude from Sitemap</a></li>
+  <li><a href="#see-also-" id="markdown-toc-see-also-">See Also 📚</a></li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<hr />
+
+<h2 id="general-front-matters-for-a-post">General Front Matters for A Post</h2>
+
+<p>A Jekyll post should contain the front matters as the following example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">permalink</span><span class="pi">:</span> <span class="s">/blog/my-first-post/</span>
+<span class="na">slug</span><span class="pi">:</span> <span class="s">index.html</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s">My first blog post</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2020-01-31 07:30 +0000</span>
+<span class="na">last_modified_at</span><span class="pi">:</span> <span class="s">2024-01-16 12:01 +0800</span>
+<span class="na">category</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">category1</span><span class="pi">,</span> <span class="nv">category2</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">tag1</span><span class="pi">,</span> <span class="nv">tag2</span><span class="pi">,</span> <span class="nv">tag3</span><span class="pi">]</span>
+<span class="na">excerpt</span><span class="pi">:</span> <span class="s">This is the first blog post for my Jekyll site.</span>
+<span class="nn">---</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">layout</code></td>
+      <td>The Jekyll layout file to use.<br /><em>Options:</em> <code class="language-plaintext plaintext highlighter-rouge">page</code>, <code class="language-plaintext plaintext highlighter-rouge">post</code>, <code class="language-plaintext plaintext highlighter-rouge">archive</code>, <code class="language-plaintext plaintext highlighter-rouge">category-list</code> and <code class="language-plaintext plaintext highlighter-rouge">tag-list</code>.<br /><strong>Note</strong>: <code class="language-plaintext plaintext highlighter-rouge">page-right-sidebar</code> and <code class="language-plaintext plaintext highlighter-rouge">post-left-sidebar</code> are deprecated.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">title</code></td>
+      <td>The title of the page or post.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">date</code></td>
+      <td>The date here overrides the date from the name of the post file.<br /><strong>Note</strong>: A date is specified in the format <code class="language-plaintext plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS +/-TTTT</code>; hours, minutes, seconds, and timezone offset are optional.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">last_modified_at</code></td>
+      <td>(<em>Optional</em>) The date when the post was the last modified.<br /><strong>Note</strong>: A date is specified in the format <code class="language-plaintext plaintext highlighter-rouge">YYYY-MM-DD HH:MM:SS +/-TTTT</code>; hours, minutes, seconds, and timezone offset are optional.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">permalink</code></td>
+      <td>(<em>Optional</em>) The custom URL for the page or post, if you need your processed blog post URLs to be something other than the site-wide style. <em>Default:</em> <code class="language-plaintext plaintext highlighter-rouge">/year/month/day/title.html</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">slug</code></td>
+      <td>(Optional) The custom name for the page or post file, if you need your processed blog post file names to be something other than the original name. Default: The original file name.<br /><strong>Note</strong>: If the <code class="language-plaintext highlighter-rouge">permalink</code> option is set to a string that ends with <code class="language-plaintext highlighter-rouge">/</code>, you need to set the slug option to <code class="language-plaintext highlighter-rouge">" "</code> or <code class="language-plaintext highlighter-rouge">index.html</code> to avoid generating an invalid URL for the site preview feature of Front Matter CMS.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">category</code></td>
+      <td>(<em>Optional</em>) One or multiple categories that the post belongs to.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">tags</code></td>
+      <td>(<em>Optional</em>) One or multiple tags that the post associates with.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">excerpt</code></td>
+      <td>(<em>Optional</em>) The short text to show on the card of the list/grid of posts, and use as the meta description of the page or post.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>💡 See:</strong> <a href="https://jekyllrb.com/docs/front-matter/" title="Official Jekyll Documentation">Front Matter | Jekyllrb</a></p>
+
+<hr />
+
+<h2 id="set-featured-image">Set Featured Image</h2>
+
+<p>You can assign an image (with <strong>730×431</strong> pixels in size) as the featured image of a post in the front matter like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
+  <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/picture.png</span>
+</code></pre></div></div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">path</code></td>
+      <td>(<em>Required</em>) Absolute or relative path of a JPG, PNG, or SVG file.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">hide</code></td>
+      <td>(<em>Optional</em>) Set to <code class="language-plaintext plaintext highlighter-rouge">true</code> to not embed the image on the page.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">class</code></td>
+      <td>(<em>Optional</em>) Additional class names for the &lt;amp-img&gt; component, e.g. <code class="language-plaintext plaintext highlighter-rouge">shadow-none</code> to remove the box shallow.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">width</code></td>
+      <td>(<em>Optional</em>) Specify the image width (in px). <em>Default:</em> 730 (px).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">height</code></td>
+      <td>(<em>Optional</em>) Specify the image height (in px). <em>Default:</em> 411 (px).</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">fit</code></td>
+      <td>(<em>Optional</em>) The horizontal alignment of the thumbnail in cards and post grid. <em>Options:</em> <code class="language-plaintext plaintext highlighter-rouge">left</code> / <code class="language-plaintext plaintext highlighter-rouge">right</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Note</strong>: The front matter <code class="language-plaintext highlighter-rouge">image</code> also inherits the properties from <a href="https://github.com/jekyll/jekyll-feed#optional-front-matter">Jekyll Feed</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md#customizing-image-output">Jekyll SEO Tag</a>.</p>
+
+<h3 id="hide-featured-image-on-a-post">Hide Featured Image on A Post</h3>
+
+<p>If you do not want to render the featured image on a post, append a <code class="language-plaintext highlighter-rouge">hide</code> option to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
+   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
+   <span class="na">hide</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<h3 id="remove-box-shadow-from-featured-image">Remove Box Shadow from Featured Image</h3>
+
+<p>If you want to remove the shadow of the featured image on a post, append the following class to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em></p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
+   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
+   <span class="na">class</span><span class="pi">:</span> <span class="s">shadow-none</span>
+</code></pre></div></div>
+
+<h3 id="featured-images-that-do-not-have-an-aspect-ratio-of-169">Featured Images That Do Not Have an Aspect Ratio of 16:9</h3>
+
+<p>If the image is not at 16:9 aspect ratio, you need to define its width and height under the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
+   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
+   <span class="na">width</span><span class="pi">:</span> <span class="m">640</span>
+   <span class="na">height</span><span class="pi">:</span> <span class="m">480</span>
+</code></pre></div></div>
+
+<h3 id="show-thumbnail-image-in-sidebar-widgets">Show Thumbnail Image in Sidebar Widgets</h3>
+
+<ol>
+  <li>Make a copy of each featured image file in the same folder.</li>
+  <li>Rename the copies to have a filename like <code class="language-plaintext highlighter-rouge">&lt;filename&gt;.thumb.&lt;ext&gt;</code>, <em>e.g.</em> <code class="language-plaintext highlighter-rouge">cover-image.thumb.png</code>.</li>
+  <li>Rescale it to a height of <strong>150px</strong>.</li>
+</ol>
+
+<p>By default, the thumbnail of featured images is cropped at the center inside the cards of the list/grid of Featured Posts. A new variable for the thumbnail positioning was added to the theme on 2020-10-07. You can now change the image position to the <em>left</em> or <em>right</em> by appending a <code class="language-plaintext highlighter-rouge">fit</code> option to the <code class="language-plaintext highlighter-rouge">image</code> variable, <em>e.g.</em>:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
+   <span class="na">path</span><span class="pi">:</span> <span class="s">/assets/images/cover-image.png</span>
+   <span class="na">fit</span><span class="pi">:</span> <span class="s">left</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="pin-featured-posts">Pin Featured Posts</h2>
+
+<p>You can pin a post to the list/grid of Featured Posts in the theme by the following front matter:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">featured</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="add-custom-css-to-html-head-section">Add Custom CSS to HTML &lt;head&gt; Section</h2>
+
+<p>In the front matter, you can add your custom CSS styles to the end of the <code class="language-plaintext highlighter-rouge">&lt;style amp-custom&gt;</code> tag inside the HTML header.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">css</span><span class="pi">:</span>
+  <span class="na">badge</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># include Bootstrap 4 Badges styles</span>
+  <span class="na">syntax</span><span class="pi">:</span> <span class="no">true</span> <span class="c1"># include CSS styles for syntax highlighter</span>
+  <span class="na">custom</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+    <span class="s"># Write custom CSS to here</span>
+</code></pre></div></div>
+
+<p>For example, you can format the table elements with a zebra-striped design by the following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">css</span><span class="pi">:</span>
+  <span class="na">custom</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+    <span class="s">table { font-size: .95rem; margin-bottom: 1.5rem; }</span>
+    <span class="s">tr:nth-child(odd) { backgroud-color: #e3edf3; }</span>
+    <span class="s">th, td { padding: .5em; }</span>
+</code></pre></div></div>
+
+<p style="margin-bottom: auto;"><strong>💡 Learn more:</strong></p>
+
+<ul>
+  <li><a href="https://getbootstrap.com/docs/4.0/components/badge/" title="Bootstrap 4">Badges</a></li>
+  <li><a href="/amp-jekyll-theme-with-sirdata-consent/code/" title="AMP Affiliately Jekyll Theme">Code Block</a></li>
+  <li><a href="https://www.w3schools.com/howto/howto_css_table_zebra.asp" title="W3Schools">How To Create A Zebra Striped Table</a></li>
+</ul>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">amp</span><span class="pi">:</span>
+  <span class="na">iframe</span><span class="pi">:</span> <span class="no">true</span>   <span class="c1"># layout level</span>
+  <span class="na">script</span><span class="pi">:</span> <span class="no">true</span>   <span class="c1"># layout level</span>
+  <span class="na">gist</span><span class="pi">:</span> <span class="no">true</span>     <span class="c1"># page level</span>
+  <span class="na">youtube</span><span class="pi">:</span> <span class="no">true</span>  <span class="c1"># page level</span>
+</code></pre></div></div>
+
+<p><strong>💡 Related:</strong> <a href="/amp-jekyll-theme-with-sirdata-consent/using-amp-youtube/" title="Using AMP YouTube Components">How to include YouTube Video and Playlist embeds</a></p>
+
+<hr />
+
+<h2 id="add-custom-codes-to-html-head-section">Add Custom Codes to HTML &lt;head&gt; Section</h2>
+
+<p>In the front matter, you can add your codes to the HTML header using the variable <code class="language-plaintext highlighter-rouge">custom_header</code>.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">custom_head</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+  <span class="s"># Custom meta tags and AMP script components in page level</span>
+</code></pre></div></div>
+
+<p>For example, you can specify additional meta tags and AMP components as the followings:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">custom_head</span><span class="pi">:</span> <span class="pi">&gt;-</span>
+  <span class="s">&lt;!-- Instructs web crawlers to not index the page and to not crawl any of the links on the page --&gt;</span>
+  <span class="s">&lt;meta name="robots" content="noindex, nofollow"&gt;</span>
+
+  <span class="s">&lt;!-- Includes the AMP JS library for &lt;amp-accordion&gt; component --&gt;</span>
+  <span class="s">&lt;script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"&gt;&lt;/script&gt;</span>
+
+  <span class="s">&lt;!-- Includes the AMP JS library for &lt;amp-audio&gt; component --&gt;</span>
+  <span class="s">&lt;script async custom-element="amp-audio" src="https://cdn.ampproject.org/v0/amp-audio-0.1.js"&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><strong>💡 Learn more</strong>: <a href="https://developers.google.com/search/docs/advanced/robots/robots_meta_tag" title="Google Search Central">Robots meta tag, data-nosnippet, and X-Robots-Tag specifications</a></p>
+
+<hr />
+
+<h2 id="sidebar-options">Sidebar Options</h2>
+
+<h3 id="override-default-sidebar-setting-v20">Override Default Sidebar Setting <span class="badge badge-success">v2.0</span></h3>
+
+<p><strong>Options:</strong> <code class="language-plaintext highlighter-rouge">left</code>, <code class="language-plaintext highlighter-rouge">right</code>, and <code class="language-plaintext highlighter-rouge">none</code></p>
+
+<p>For example, you can set a left sidebar on a post by the following:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">sidebar</span><span class="pi">:</span> <span class="s">left</span>
+</code></pre></div></div>
+
+<h3 id="options-for-resources-widget">Options for Resources Widget</h3>
+
+<h4 id="display-github-metadata-for-project-repo">Display GitHub Metadata for Project Repo</h4>
+
+<p>When you use this theme for the website of a Github project repository, it is available to show buttons that link to the repository and a release file in the sidebar.</p>
+
+<p>Follow our <a href="/amp-jekyll-theme-with-sirdata-consent/config-guide/">Config Guide</a> to set up your <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<p>If a release exists in the repository, an additional button that links to the webpage of the latest release will be shown in the widget.</p>
+
+<p><strong>Note</strong>: Authentication is required to get your repository data to show the release button. Please follow the docs of <a href="https://github.com/jekyll/github-metadata/blob/master/docs/authentication.md">jekyll
+/github-metadata</a> to set up your personal access token.</p>
+
+<h5 id="v12-deprecated"><span class="badge badge-default">v1.2</span> <sup>(Deprecated)</sup></h5>
+
+<p>Add the following front matter to every page that you want to show the <strong>Resources</strong> Widget.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span> <span class="no">true</span>
+</code></pre></div></div>
+
+<p>You can replace the second button and point it to a downloadable file by configuring it like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">//.../filename.zip</span>
+</code></pre></div></div>
+
+<h5 id="v20"><span class="badge badge-success">v2.0</span></h5>
+
+<p>You can globally configure the widget by using the attribute <code class="language-plaintext highlighter-rouge">resources_widget</code> in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file. It is not necessary to add <code class="language-plaintext highlighter-rouge">download: true</code> to the front matter of individual pages for enabling the widget.</p>
+
+<p>Any file download buttons will display separately, and the button that links to the webpage of the latest release will no longer be overridden.</p>
+
+<h4 id="display-download-buttons">Display Download Buttons</h4>
+
+<h5 id="v12-deprecated-1"><span class="badge badge-default">v1.2</span> <sup>(Deprecated)</sup></h5>
+
+<p>A Download button shows on a page when you declare the URL of a download file in the front matter like this:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span>
+  <span class="na">url</span><span class="pi">:</span> <span class="s">//.../filename.zip</span>
+</code></pre></div></div>
+
+<p>This button will substitute the button for linking to the latest release if GitHub metadata is also presented in the widget.</p>
+
+<h5 id="v20-1"><span class="badge badge-success">v2.0</span></h5>
+
+<p>The new version has been redesigned to support creating a list of buttons for multiple files on-page. You need to itemize the <code class="language-plaintext highlighter-rouge">name</code> and <code class="language-plaintext highlighter-rouge">url</code> of each file in the front matter, for example:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">download</span><span class="pi">:</span>
+  <span class="na">files</span><span class="pi">:</span>
+    <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">../training-01/labsheet.pdf</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Lab Sheet</span>
+    <span class="pi">-</span> <span class="na">url</span><span class="pi">:</span> <span class="s">../training-01/lab-files.zip</span>
+      <span class="na">name</span><span class="pi">:</span> <span class="s">Lab Files</span>
+</code></pre></div></div>
+
+<hr />
+
+<h2 id="on-page-seo">On-Page SEO</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">canonical_url</code></td>
+      <td>(<em>Optional</em>) The custom <a href="https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls" title="Google Developers">Canonical URL</a> for the page or post.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">author</code></td>
+      <td>(<em>Optional</em>) The lookup key for author information to be propagated to JSON-LD structured data. See <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md">Jekyll SEO Tag</a>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">description</code></td>
+      <td>(<em>Optional</em>) A brief summary of a web page to be shown in search engine results.<br /><strong>Note</strong>: This will takes priority over existing front matter attribute <code class="language-plaintext highlighter-rouge">excerpt</code>.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">locale</code></td>
+      <td>(<em>Optional</em>) The custom locale to override the site-level locale information for the page or post.</td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">image</code></td>
+      <td>(<em>Optional</em>) <strong>Note</strong>: This is inherited by the attribute for setting the <a href="#set-featured-image">featured image</a> for the page or post.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>💡 Learn more from the <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md">basic usage</a> and <a href="https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/advanced-usage.md">advanced usage</a> in the Jekyll SEO Tag documentation.</p>
+
+<hr />
+
+<h2 id="set-url-redirects">Set URL Redirects</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">redirect_from</code></td>
+      <td>(<em>Optional</em>) One or multiple relative URLs that will redirect to the page or post, <em>e.g.</em> <code class="language-plaintext plaintext highlighter-rouge">/post/2019/10/31/index.html</code></td>
+    </tr>
+    <tr>
+      <td><code class="language-plaintext highlighter-rouge">redirect_to</code></td>
+      <td>(<em>Optional</em>) The destination URL of the redirection, <em>e.g.</em> <code class="language-plaintext plaintext highlighter-rouge">http://www.github.com</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>💡 Learn more about the usage from the <a href="https://github.com/jekyll/jekyll-redirect-from">Jekyll Redirect From</a> documentation.</p>
+
+<h2 id="exclude-from-sitemap">Exclude from Sitemap</h2>
+
+<blockquote>
+  <p>If you would like to exclude specific pages/posts from the sitemap set the sitemap flag to false in the front matter for the page or post.</p>
+
+  <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  <span class="na">sitemap</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div>  </div>
+</blockquote>
+
+<p>💡 Learn more from the <a href="https://github.com/jekyll/jekyll-sitemap#exclusions">Jekyll Sitemap Generator Plugin</a> documentation.</p>
+
+<hr />
+
+<h2 id="see-also-">See Also 📚</h2>
+
+<ul>
+  <li><a href="https://jekyllrb.com/docs/configuration/front-matter-defaults/" title="Official Jekyll Documentation">Front Matter Defaults | Jekyllrb</a></li>
+  <li><a href="https://github.com/chriskyfung/amp-affiliately-jekyll-theme/blob/master/README.md" title="GitHub">README.md - amp-affiliately-jekyll-theme</a></li>
+</ul>]]></content><author><name></name></author><category term="[&quot;doc&quot;]" /><category term="front matter" /><category term="styles" /><category term="AMP" /><summary type="html"><![CDATA[The docs for the front matters that that let you control the post title, date, featured image, CSS styles, etc.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/frontend-4342425_730.png" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/frontend-4342425_730.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Responsive Web Design</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/responsive-web-design/" rel="alternate" type="text/html" title="Responsive Web Design" /><published>2021-07-20T02:47:00+00:00</published><updated>2021-07-20T02:47:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/device-look</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/responsive-web-design/"><![CDATA[<p>Preview the look of the responsive design for different devices (smartphone <i class="fas fa-mobile-alt"></i> , tablet <i class="fas fa-tablet-alt"></i> and laptop <i class="fas fa-laptop"></i>) – <em><strong>Remark</strong>: This page does not support for Internet Explorer (IE)</em></p>
+
+<div style="display:flex;flex-wrap:wrap;">
+
+  <div class="device-wrapper">
+    <div class="smartphone">
+      <div class="content">
+        <amp-iframe width="360" height="640" layout="responsive" sandbox="allow-scripts" frameborder="0" src="/amp-affiliately-jekyll-theme/scroll/">
+        </amp-iframe>
+      </div>
+    </div>
+    <h3 class="text-center">Phone</h3>
+  </div>
+
+  <div class="device-wrapper">
+    <div class="tablet">
+      <div class="content">
+        <amp-iframe width="768" height="1024" layout="responsive" sandbox="allow-scripts" frameborder="0" src="/amp-affiliately-jekyll-theme/scroll/">
+        </amp-iframe>
+      </div>
+    </div>
+    <h3 class="text-center">Tablet</h3>
+  </div>
+
+  <div class="device-wrapper">
+    <div class="laptop">
+      <div class="content">
+        <amp-iframe width="1366" height="800" layout="responsive" sandbox="allow-scripts" frameborder="0" src="/amp-affiliately-jekyll-theme/scroll/">
+        </amp-iframe>
+      </div>
+    </div>
+    <h3 class="text-center">Laptop</h3>
+  </div>
+
+</div>]]></content><author><name></name></author><category term="[&quot;feature&quot;]" /><category term="demo" /><summary type="html"><![CDATA[Preview the look for different devices (smartphone 📱, tablet 💻 and laptop 🖥️)]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/responsive-1622825_730.png" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/responsive-1622825_730.png" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Ads Settings</title><link href="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/ads-settings/" rel="alternate" type="text/html" title="Ads Settings" /><published>2021-04-02T03:00:00+00:00</published><updated>2021-04-02T03:00:00+00:00</updated><id>https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/ads-settings</id><content type="html" xml:base="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/ads-settings/"><![CDATA[<aside style="position: relative;">
+    <a href="#toc-skipped" class="screen-reader-only">Skip table of contents</a>
+</aside>
+
+<h2 class="no_toc" id="table-of-contents">Table of Contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#disable-auto-ads" id="markdown-toc-disable-auto-ads">Disable Auto Ads</a></li>
+  <li><a href="#manually-insert-ad-units" id="markdown-toc-manually-insert-ad-units">Manually Insert Ad Units</a>    <ul>
+      <li><a href="#recommended-ad-sizes" id="markdown-toc-recommended-ad-sizes">Recommended Ad sizes</a></li>
+    </ul>
+  </li>
+  <li><a href="#ad-background" id="markdown-toc-ad-background">Ad Background</a></li>
+</ul>
+
+<aside id="toc-skipped"></aside>
+
+<p>This theme supports Ad display with Google Adsense using <code class="language-plaintext highlighter-rouge">&lt;amp-ad&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;amp-auto-ads&gt;</code> components.</p>
+
+<p>You have to set up your <em>Adsense client ID</em> in <code class="language-plaintext highlighter-rouge">_config.yml</code> as below.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Google Ads</span>
+<span class="na">adsense</span><span class="pi">:</span>
+  <span class="na">client_id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ca-pub-xxxxxxxxxxxxxxxx'</span> <span class="c1"># Google Adsense client ID</span>
+</code></pre></div></div>
+
+<p>The theme will include the following two AMP components to the HTML head:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">async</span> <span class="na">custom-element=</span><span class="s">"amp-auto-ads"</span> 
+  <span class="na">src=</span><span class="s">"https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">async</span> <span class="na">custom-element=</span><span class="s">"amp-ad"</span> 
+  <span class="na">src=</span><span class="s">"https://cdn.ampproject.org/v0/amp-ad-0.1.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h2 id="disable-auto-ads">Disable Auto Ads</h2>
+
+<p>You can disable and exclude the <strong>Auto Ads</strong> component by configuring <code class="language-plaintext highlighter-rouge">auto_ads: false</code> as below.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Google Ads</span>
+<span class="na">adsense</span><span class="pi">:</span>
+  <span class="na">client_id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ca-pub-xxxxxxxxxxxxxxxx'</span> <span class="c1"># Google Adsense client ID</span>
+  <span class="na">auto_ads</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<h2 id="manually-insert-ad-units">Manually Insert Ad Units</h2>
+
+<p>This theme comes with two pre-defined Ad placements:</p>
+
+<ol>
+  <li>the space before the content per post</li>
+  <li>the sidebar ads section (if the sidebar presents)</li>
+</ol>
+
+<p>You have to assign your Ad unit IDs as the configuration below:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Google Ads</span>
+<span class="na">adsense</span><span class="pi">:</span>
+  <span class="na">client_id</span><span class="pi">:</span> <span class="s1">'</span><span class="s">ca-pub-xxxxxxxxxxxxxxxx'</span> <span class="c1"># Google Adsense client ID</span>
+  <span class="na">ad_slot</span><span class="pi">:</span>
+    <span class="na">before_content</span><span class="pi">:</span> <span class="s">xxxxxxxxxx</span> <span class="c1"># Ad Slot that places before content</span>
+    <span class="na">sidebar</span><span class="pi">:</span> <span class="s">xxxxxxxxxx</span> <span class="c1"># Ad Slot that places to sidebar</span>
+</code></pre></div></div>
+
+<h3 id="recommended-ad-sizes">Recommended Ad sizes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Placement</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>media &gt;= 1200px</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>before content</td>
+      <td>100%</td>
+      <td>200px</td>
+      <td>width: 730px</td>
+    </tr>
+    <tr>
+      <td>sidebar</td>
+      <td>100%</td>
+      <td>250px</td>
+      <td>width: 300px</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="ad-background">Ad Background</h2>
+
+<p>In general, Adsense Term of Service (TOS) disallows publishers to modify Ads appearance with CSS.
+But it leaves blank spaces on the webpage sometimes, when it cannot suggest any Ads that match with the page content.
+This is highly undesirable because it will give a very bad user experience.</p>
+
+<p>To make it a little nicer, a small icon is set as the background image of each <code class="language-plaintext highlighter-rouge">&lt;amp-ad&gt;</code> element as shown below.</p>
+
+<figure><amp-img width="751" height="285" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/ad-placement-background-image.webp" alt="Icon displays at the Ad placement" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox">
+        <amp-img fallback="" width="751" height="285" layout="intrinsic" src="/amp-jekyll-theme-with-sirdata-consent/assets/images/ad-placement-background-image.png" alt="Icon displays at the Ad placement" on="tap:lightbox1" role="button" tabindex="0" aria-label="lightbox"></amp-img>
+      </amp-img></figure>
+
+<p>It is styled with the following CSS code:</p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">amp-ad</span> <span class="p">{</span>
+  <span class="nl">background-image</span><span class="p">:</span> <span class="sx">url('https://chriskyfung.github.io/amp-affiliately-jekyll-theme/assets/images/b8d82a619c.png')</span><span class="p">;</span>
+  <span class="nl">background-position</span><span class="p">:</span> <span class="m">50%</span><span class="p">;</span>
+  <span class="nl">background-repeat</span><span class="p">:</span> <span class="nb">no-repeat</span><span class="p">;</span>
+  <span class="nl">background-size</span><span class="p">:</span> <span class="m">50px</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>When an Ad unit is successfully loaded and rendered, the entire icon will be covered and will not affect the Ad appearance.</p>
+
+<p>If you still worry about violating the Adsense Policy, you can exclude the CSS styles by setting the following in the <code class="language-plaintext highlighter-rouge">_config.yml</code> file.</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">adstyle</span><span class="pi">:</span> <span class="no">false</span>
+</code></pre></div></div>
+
+<p><br /></p>]]></content><author><name>Chris KY Fung</name></author><category term="[&quot;doc&quot;]" /><category term="Adsense" /><category term="_config" /><category term="styles" /><category term="AMP" /><summary type="html"><![CDATA[Ads Styles and Configuration]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/web-5771064_730.jpg" /><media:content medium="image" url="https://chriskyfung.github.io/amp-jekyll-theme-with-sirdata-consent/assets/images/web-5771064_730.jpg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

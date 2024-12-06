@@ -1,0 +1,141 @@
+> amp-affiliately-jekyll-theme@2.7.1 test
+> npx gulp validate
+
+[[90m17:02:26[39m] Using gulpfile D:\ky fung\Documents\GitHub\amp-affiliately-jekyll-theme\gulpfile.js
+[[90m17:02:26[39m] Starting 'validate'...
+[[90m17:02:29[39m] Finished 'validate' after 3.35 s
+
+FAIL: index.html
+line 41, col 2622: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: search.html
+line 6, col 2781: Custom JavaScript is not allowed. (see https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/#custom-javascript-is-not-allowed)      
+line 7, col 0: The attribute 'enableautocomplete' may not appear in tag 'div'. (see undefined)  
+line 38, col 2628: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: ads-settings\index.html
+line 68, col 2635: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: category\index.html
+line 38, col 2631: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: code\index.html
+line 103, col 2627: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: config-guide\index.html
+line 112, col 2635: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: device-look\index.html
+line 1, col 224: The attribute 'http-equiv' may not appear in tag 'meta'. (see undefined)       
+line 3, col 393: Custom JavaScript is not allowed. (see https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/#custom-javascript-is-not-allowed)       
+
+FAIL: front-matter\index.html
+line 1, col 224: The attribute 'http-equiv' may not appear in tag 'meta'. (see undefined)       
+line 3, col 390: Custom JavaScript is not allowed. (see https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/#custom-javascript-is-not-allowed)       
+
+FAIL: front-matter-guide\index.html
+line 116, col 2641: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: media\index.html
+line 89, col 2628: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: page2\index.html
+line 42, col 2628: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: page3\index.html
+line 38, col 2628: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: plugins\index.html
+line 67, col 2630: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: post-processing\index.html
+line 83, col 2638: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: responsive-web-design\index.html
+line 38, col 2644: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: scroll\index.html
+line 29, col 2629: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: style-guide\index.html
+line 66, col 2634: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\index.html
+line 38, col 2626: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: category\doc\index.html
+line 50, col 2635: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: category\feature\index.html
+line 50, col 2639: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: category\guide\index.html
+line 1, col 224: The attribute 'http-equiv' may not appear in tag 'meta'. (see undefined)       
+line 3, col 385: Custom JavaScript is not allowed. (see https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/#custom-javascript-is-not-allowed)       
+
+FAIL: category\sample\index.html
+line 54, col 2638: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\adsense\index.html
+line 40, col 2634: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\amp\index.html
+line 44, col 2630: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\audio\index.html
+line 40, col 2632: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\code\index.html
+line 40, col 2631: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\config\index.html
+line 44, col 2633: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\demo\index.html
+line 48, col 2631: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\front-matter\index.html
+line 40, col 2639: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\image\index.html
+line 40, col 2632: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\left-sidebar\index.html
+line 40, col 2639: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\markdown\index.html
+line 47, col 2635: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\plugin\index.html
+line 40, col 2633: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\styles\index.html
+line 48, col 2633: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: tag\youtube\index.html
+line 43, col 2634: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2017\11\29\sample.html
+line 43, col 2639: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2017\11\30\style-guide.html
+line 1, col 224: The attribute 'http-equiv' may not appear in tag 'meta'. (see undefined)       
+line 3, col 383: Custom JavaScript is not allowed. (see https://amp.dev/documentation/guides-and-tutorials/learn/validation-workflow/validation_errors/#custom-javascript-is-not-allowed)       
+
+FAIL: 2018\01\11\markup-example.html
+line 42, col 2647: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2018\01\12\is-intelligence-enough.html
+line 39, col 2655: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2018\01\12\powerful-things-markdown-editor.html
+line 42, col 2664: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2018\01\12\red-riding.html
+line 39, col 2643: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2018\01\12\tree-of-codes.html
+line 39, col 2646: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
+
+FAIL: 2018\01\12\we-all-wait-for-summer.html
+line 38, col 2655: The extension 'amp-link-rewriter' was found on this page, but is unused. Please remove this extension. (see undefined)
